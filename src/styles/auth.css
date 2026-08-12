@@ -1,0 +1,377 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+/* LOGIN PAGE */
+.auth-page{
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/src/assets/icons/latarlg.jpg") no-repeat center center/ cover;
+    background-color: #141414;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.auth-page1{
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/src/assets/icons/latarrgs.jpg") no-repeat center center/ cover;
+    background-color: #141414;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+/* login (bagian tengah) */
+
+.login-container{
+    width: 100%;
+    max-width: 560px;
+    padding: 60px 55px;
+    background: rgba(20, 20, 20, 0.72);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.55);
+    text-align: center;
+    transition: .3s ease;
+}
+
+.login-container h2{
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: .5px;
+}
+
+.login-container .subtitle{
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #c7c7c7;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+.login-container:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+
+/* logonya */
+.logo-icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-icon img {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+.login-container h2{
+    margin-bottom: 8px;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.login-container .subtitle{
+    margin-bottom: 24px;
+    font-size: 18px;
+    color: #aaa;
+}
+
+/* input style */
+.input-group{
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.input-group label{
+    text-align: left;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 0 18px;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+    height: 58px;
+}
+
+.input-group input:focus{
+    outline: none;
+    border: 1px solid #777;
+}
+
+/* FORM OPTION */
+.form-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.form-options .register-link{
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+.form-options .register-link a{
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.form-options .register-link a:hover{
+    color: #ffff;
+    text-decoration: underline;
+}
+
+.forgot-password{
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.forgot-password:hover{
+    color: #ffff;
+    text-decoration: underline;
+}
+
+/* ===========================
+    PRIMARY BUTTON
+=========================== */
+
+.btn-login,
+.btn-daftar{
+    width: 100%;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 16px;
+    background: #ffffff;
+    color: #141414;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-login:hover,
+.btn-daftar:hover{
+    background: #e8e8e8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.btn-google{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-google:hover{
+    background: rgba(255,255,255,.20);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Separator */
+
+.separator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    color: rgba(255,255,255,.7);
+    font-size: 14px;
+}
+
+.separator::before,
+.separator::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,.2);
+}
+
+.separator::before{
+    margin-right: 15px;
+}
+
+.separator::after{
+    margin-left: 15px;
+}
+
+/*  PASSWORD */
+.password-input {
+    position: relative;
+    width: 100%;
+}
+
+.password-input input {
+    width: 100%;
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #b3b3b3;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    color: #ffffff;
+}
+
+/* GOOGLE ICON*/
+.google-icon{
+    width: 29px;
+    height: 29px;
+    object-fit: contain;
+}
+
+.btn-google{
+    gap: 12px;
+}
+
+/* ===========================
+    MOBILE
+=========================== */
+
+@media screen and (max-width: 600px) {
+
+    .auth-page,
+    .auth-page1 {
+        min-height: 100dvh;
+        height: auto;
+        padding: 20px 12px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-container {
+        width: 92%;
+        max-width: 390px;
+        padding: 28px 22px;
+        border-radius: 18px;
+        background: rgba(20, 20, 20, 0.72);
+    }
+
+    .logo-icon img {
+        width: 140px;
+        margin-bottom: 15px;
+    }
+
+    .login-container h2 {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+
+    .login-container .subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 18px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .input-group input {
+        height: 50px;
+        padding: 0 15px;
+        font-size: 15px;
+        border-radius: 13px;
+    }
+
+    .form-options {
+        margin-bottom: 15px;
+        gap: 8px;
+    }
+
+    .form-options .register-link,
+    .forgot-password {
+        font-size: 12px;
+    }
+
+    .btn-login,
+    .btn-daftar {
+        height: 50px;
+        margin-top: 12px;
+        border-radius: 13px;
+        font-size: 15px;
+    }
+
+    .btn-google {
+        height: 48px;
+        margin-top: 12px;
+        border-radius: 13px;
+        font-size: 14px;
+    }
+
+    .google-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .separator {
+        margin: 12px 0;
+        font-size: 13px;
+    }
+}
+

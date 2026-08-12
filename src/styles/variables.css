@@ -1,0 +1,20 @@
+:root {
+
+  /* Color */
+  --primary-color: #0f0fff;
+  --background-color: #141414;
+  --surface-color: #1f1f1f;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+
+  /* Border */
+  --border-color: #2f2f2f;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+}

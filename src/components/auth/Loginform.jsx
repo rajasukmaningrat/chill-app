@@ -1,39 +1,17 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
-import { loginWithUsername, } from "../../services/auth";
 import logo from "../../assets/icons/logo.png";
-import google from "../../assets/icons/google.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function LoginForm() {
   const navigate = useNavigate();
-  const { login } = useAuth();
-  const [ userName, setUserName ] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleGoogleLogin = async () => {
-    try {
-      const user = await login();
-      if (user) {
-        navigate("/home");
-      }
-    } catch (error) {
-      console.error("Login gagal:", error);
-    }
-  };
-
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const user = await loginWithUsername(userName, password);
-      if (user) {
-        navigate("/home");
-      }
-    } catch (error){
-      console.error("Login gagal:", error);
-    } 
+    navigate("/home");
   };
 
   return (
@@ -53,24 +31,21 @@ function LoginForm() {
         </div>
 
         <div className="input-group">
-          <label htmlFor="password">Password </label>
+          <label htmlFor="password">Password</label>
           <div className="password-input">
             <input type={showPassword ? "text" : "password"} id="password" placeholder="Masukan Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             <button type="button" className="toggle-password" onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ?  <FaEye /> : <FaEyeSlash />}
+              {showPassword ? <FaEye /> : <FaEyeSlash />}
             </button>
           </div>
         </div>
 
         <div className="form-options">
-          <p className="register-link">Belum punya akun?{""} <Link to="/register">Daftar</Link></p>
+          <p className="register-link">Belum punya akun?{" "}<Link to="/register">Daftar</Link></p>
           <Link to="#" className="forgot-password">Lupa Password?</Link>
         </div>
 
         <button type="submit" className="btn-login">Masuk</button>
-        <span className="separator"> Atau </span>
-        <button type="button" className="btn-google" onClick={handleGoogleLogin}>
-          <img src={google} alt="google logo" className="google-icon" /> Masuk dengan Google</button>
       </form>
     </section>
   );

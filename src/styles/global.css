@@ -788,254 +788,414 @@ FOOTER
 }
 
 /* =========================
-  MOBILE HOME
+  MOBILE
 ========================= */
 
 @media (max-width: 768px) {
 
-/* =========================
-  NAVBAR MOBILE
-========================= */
+  /* =========================
+    GLOBAL
+  ========================= */
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* =========================
+    NAVBAR
+  ========================= */
+
   .navbar {
-    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
     padding: 0 18px;
+    background: #141617;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    z-index: 1000;
   }
 
-  .nav-left {
-    gap: 20px;
+
+  .navbar-logo {
+    width: 105px;
+    height: auto;
   }
 
-  .icon-logo img {
-    width: 100px;
+
+  .navbar-menu {
+    display: none;
   }
 
-  .nav-menu {
-    gap: 12px;
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
-  .nav-menu a {
-    min-height: 42px;
-    font-size: 14px;
-    padding: 6px 2px;
+
+  .navbar-actions button {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .profile-trigger {
-    gap: 8px;
-    min-width: 52px;
-    min-height: 44px;
-  }
 
-  .profile-pic {
-    width: 38px;
-    height: 38px;
-  }
-
-  .dropdown-content {
-    top: 55px;
-    width: 210px;
-  }
-
-  .menu-item {
-    min-height: 48px;
-    padding: 13px 17px;
-    font-size: 14px;
-  }
-
-  .profile-arrow {
-    font-size: 21px;
-  }
-
-    /* ---------- HERO ---------- */
+  /* =========================
+    HERO SECTION
+  ========================= */
 
   .hero-section {
     width: 100%;
-    min-height: 232px;
+    min-height: 70vh;
     margin-top: 64px;
-    padding: 0 0 25px;
-    display: flex;
-    align-items: flex-end;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 0 20px;
   }
 
-  .hero-section::before {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.2)
-    );
-  }
 
-  .hero-section::after {
-    height: 95px;
-    background: linear-gradient(
-      to bottom,
-      rgba(20, 20, 20, 0),
-      rgba(20, 20, 20, 0.65),
-      #141414
-    );
-  }
-
-  .hero-overlay {
+  .hero-content {
     width: 100%;
-    padding: 0 12px;
+    padding-bottom: 40px;
+  }
+
+
+  .hero-title {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  .hero-buttons {
     display: flex;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+
+  .hero-buttons button {
+    min-height: 42px;
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+
+  /* =========================
+    MOVIE SECTION
+  ========================= */
+
+  .movie-section {
+    position: relative;
+    width: 100%;
+    padding: 0 16px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+
+  .section-title {
+    margin: 0 0 16px;
+    padding-left: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+
+  /* =========================
+    MOVIE SLIDER
+  ========================= */
+
+  .movie-slider {
+    position: relative;
+    width: 100%;
+  }
+
+
+  .movie-grid {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    padding: 5px 0 25px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+
+  .movie-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* =========================
+    PORTRAIT MOVIE
+  ========================= */
+
+  .movie-grid.portrait {
+    align-items: flex-start;
+  }
+
+
+  .movie-grid.portrait .movie-card {
+    flex: 0 0 145px;
+    height: 218px;
+    border-radius: 7px;
+  }
+
+
+  /* =========================
+    LANDSCAPE MOVIE
+  ========================= */
+
+  .movie-grid.landscape {
+    align-items: flex-start;
+  }
+
+
+  .movie-grid.landscape .movie-card {
+    flex: 0 0 330px;
+    height: 185px;
+    border-radius: 7px;
+  }
+
+
+  /* =========================
+    MOVIE CARD
+  ========================= */
+
+  .movie-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transform: none;
+  }
+
+
+  .movie-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+
+  .movie-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+
+  .movie-card:hover img {
+    transform: none;
+    filter: none;
+  }
+
+
+  /* =========================
+    MOVIE INFO
+  ========================= */
+
+  .movie-info {
+    padding: 12px;
+  }
+
+
+  .movie-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 10px;
+  }
+
+
+  .movie-actions button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .movie-actions svg {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  .movie-title-row {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 8px;
   }
 
-  .hero-content {
-    max-width: calc(100% - 42px);
-    text-align: left;
+
+  .movie-title-row h3 {
+    font-size: 14px;
+    line-height: 1.3;
   }
 
-  .hero-title {
-    font-size: 23px;
-    line-height: 1.1;
-    margin-bottom: 9px;
-  }
 
-  .hero-description {
-    max-width: 310px;
+  .movie-rating {
     font-size: 11px;
-    line-height: 1.45;
-    color: #dddddd;
-    margin-bottom: 12px;
+    white-space: nowrap;
   }
 
-  .hero-buttons {
+
+  .movie-meta {
     display: flex;
     align-items: center;
-    gap: 7px;
-    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 6px;
+    font-size: 11px;
   }
 
-  .btn-play {
-    padding: 7px 14px;
-    font-size: 10px;
-    white-space: nowrap;
-    border-radius: 20px;
-  }
-
-  .btn-info {
-    padding: 7px 12px;
-    font-size: 10px;
-    white-space: nowrap;
-    border-radius: 20px;
-  }
 
   .age-rating {
-    padding: 4px 7px;
+    padding: 2px 5px;
     font-size: 10px;
-    white-space: nowrap;
   }
 
-  .hero-sound {
-    width: 34px;
-    height: 34px;
-    margin-bottom: 0;
-    flex-shrink: 0;
+
+  .movie-genres {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+    font-size: 10px;
   }
 
-  .sound-icon {
-    width: 15px;
-    height: 15px;
-  }
 
-    /* ---------- MAIN CONTENT ---------- */
-
-    .main-content {
-      padding: 35px 18px;
-    }
-
-    section {
-      width: 100%;
-    }
-
-    /* ---------- SECTION TITLE ---------- */
-
-    .section-title {
-      font-size: 20px;
-      line-height: 1.3;
-      margin-bottom: 15px;
-    }
-
-    /* ---------- MOVIE / CARD GRID ---------- */
-  .movie-section {
-    margin-bottom: 35px;
-  }
-
-  .section-title {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-
-  .movie-grid {
-    gap: 15px;
-    padding: 0 5px;
-  }
-
-  .movie-card {
-    flex: 0 0 260px;
-  }
+  /* =========================
+    SLIDER ARROWS
+  ========================= */
 
   .slider-arrow {
-    width: 36px;
-    height: 36px;
-  }
-
-  .slider-arrow svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .slider-arrow-left {
-    left: 5px;
-  }
-
-  .slider-arrow-right {
-    right: 5px;
-  }
-
-  .movie-grid.portrait .movie-card {
-    flex: 0 0 150px;
+    display: none;
   }
 
 
-    /* ---------- FOOTER ---------- */
+  /* =========================
+    FOOTER
+  ========================= */
 
-    .footer {
-      margin-top: 40px;
-      padding: 40px 20px;
-    }
+  .footer {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--background-color);
+    border-top: 1px solid rgba(255, 255, 255, .12);
+  }
 
-    .footer-container {
-      flex-direction: column;
-      gap: 30px;
-    }
 
-    .footer-menu {
-      flex-direction: column;
-      gap: 25px;
-    }
+  .footer-container {
+    width: 100%;
+    min-height: auto;
+    padding: 40px 20px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
 
-    .footer-logo h2 {
-      font-size: 24px;
-    }
 
-    .footer-logo p {
-      font-size: 13px;
-      line-height: 1.5;
-    }
+  /* =========================
+    FOOTER BRAND
+  ========================= */
 
-    .footer-column h3 {
-      font-size: 16px;
-    }
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .footer-column a {
-      font-size: 14px;
-    }
+
+  .footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 18px;
+  }
+
+
+  .footer-copyright {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  /* =========================
+    FOOTER LINKS
+  ========================= */
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .footer-title {
+    margin: 0 0 16px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+
+  .footer-link-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 30px;
+    row-gap: 12px;
+  }
+
+
+  .footer-link {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+
+  /* =========================
+    FOOTER HELP
+  ========================= */
+
+  .footer-help {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .footer-help-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+
+  .footer-help-link {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
 }

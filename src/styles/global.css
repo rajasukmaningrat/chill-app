@@ -5,7 +5,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 /* =========================
   ROOT
 ========================= */
@@ -13,7 +12,6 @@
 :root {
   --background-color: #141617;
 }
-
 
 /* =========================
   GLOBAL
@@ -23,13 +21,11 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   background-color: var(--background-color);
   color: var(--text-primary);
   overflow-x: hidden;
 }
-
 
 a {
   color: var(--text-secondary);
@@ -37,18 +33,15 @@ a {
   transition: color .2s ease;
 }
 
-
 a:hover,
 a.active {
   color: var(--text-primary);
 }
 
-
 img {
   display: block;
   max-width: 100%;
 }
-
 
 button {
   border: none;
@@ -57,23 +50,21 @@ button {
   font: inherit;
 }
 
-
 input,
 textarea,
 select {
   font: inherit;
 }
 
-
 ul,
 ol {
   list-style: none;
 }
 
-
 /* =========================
   NAVBAR
 ========================= */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -131,6 +122,7 @@ ol {
 /* =========================
   PROFILE
 ========================= */
+
 .profile-dropdown {
   position: relative;
 }
@@ -181,6 +173,7 @@ ol {
 /* =========================
   DROPDOWN PROFILE
 ========================= */
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -220,10 +213,10 @@ ol {
   font-size: 17px;
 }
 
-
 /* =========================
-    HERO
+  HERO
 ========================= */
+
 .hero-section {
   width: 100%;
   min-height: 900px;
@@ -361,7 +354,6 @@ ol {
   stroke-width: 2;
 }
 
-
 /* =========================
   LAYOUT
 ========================= */
@@ -379,8 +371,9 @@ section {
 }
 
 /* =========================
-    MOVIE SECTION
+  MOVIE SECTION
 ========================= */
+
 .movie-section {
   position: relative;
   width: 100%;
@@ -388,7 +381,6 @@ section {
   margin-top: 15px;
   margin-bottom: 5px;
 }
-
 
 .section-title {
   margin: 0 0 20px;
@@ -398,7 +390,6 @@ section {
   font-weight: 600;
   line-height: 1.2;
 }
-
 
 .movie-slider {
   position: relative;
@@ -417,11 +408,9 @@ section {
   margin: 0;
 }
 
-
 .movie-grid::-webkit-scrollbar {
   display: none;
 }
-
 
 .movie-card {
   position: relative;
@@ -437,7 +426,6 @@ section {
   z-index: 1;
 }
 
-
 .movie-card img {
   width: 100%;
   height: 100%;
@@ -447,7 +435,6 @@ section {
     transform .35s ease,
     filter .35s ease;
 }
-
 
 .movie-card .movie-info {
   position: absolute;
@@ -464,25 +451,21 @@ section {
   z-index: 2;
 }
 
-
 .movie-card:hover {
   transform: scale(1.18);
   z-index: 50;
   box-shadow: 0 30px 70px rgba(0, 0, 0, .8);
 }
 
-
 .movie-card:hover img {
   transform: scale(1.02);
   filter: brightness(.82);
 }
 
-
 .movie-card:hover .movie-info {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .movie-actions {
   display: flex;
@@ -490,7 +473,6 @@ section {
   gap: 10px;
   margin-bottom: 18px;
 }
-
 
 .movie-actions button {
   width: 54px;
@@ -510,13 +492,11 @@ section {
     border-color .2s ease;
 }
 
-
 .movie-actions .play-button {
   background: #ffffff;
   color: #111111;
   border-color: #ffffff;
 }
-
 
 .movie-actions button:hover {
   transform: scale(1.08);
@@ -524,17 +504,14 @@ section {
   border-color: #ffffff;
 }
 
-
 .movie-actions .play-button:hover {
   background: #ffffff;
   color: #111111;
 }
 
-
 .more-button {
   margin-left: auto;
 }
-
 
 .movie-title-row {
   display: flex;
@@ -543,7 +520,6 @@ section {
   gap: 15px;
   margin-bottom: 14px;
 }
-
 
 .movie-title-row h3 {
   margin: 0;
@@ -556,7 +532,6 @@ section {
   text-overflow: ellipsis;
 }
 
-
 .movie-rating {
   display: flex;
   align-items: center;
@@ -567,12 +542,10 @@ section {
   font-weight: 500;
 }
 
-
 .movie-rating svg {
   color: #ffc400;
   fill: #ffc400;
 }
-
 
 .movie-meta {
   display: flex;
@@ -583,7 +556,6 @@ section {
   font-size: 15px;
 }
 
-
 .age-rating {
   padding: 5px 10px;
   border-radius: 20px;
@@ -591,7 +563,6 @@ section {
   color: #d5d5d5;
   font-weight: 500;
 }
-
 
 .movie-genres {
   display: flex;
@@ -602,38 +573,31 @@ section {
   white-space: nowrap;
 }
 
-
 .movie-genres svg {
   color: #929292;
   flex-shrink: 0;
 }
 
-
 .movie-grid.landscape {
   align-items: flex-start;
 }
-
 
 .movie-grid.landscape .movie-card {
   flex: 0 0 680px;
   height: 383px;
 }
 
-
 .movie-grid.landscape .movie-card:hover {
   transform: scale(1.08);
 }
-
 
 .movie-grid.landscape .movie-card .movie-info {
   padding: 20px 24px 22px;
 }
 
-
 .movie-grid.landscape .movie-title-row h3 {
   font-size: 19px;
 }
-
 
 .slider-arrow {
   position: absolute;
@@ -657,23 +621,19 @@ section {
     box-shadow .2s ease;
 }
 
-
 .slider-arrow:hover {
   background: rgba(70, 73, 75, 1);
   transform: translateY(-50%) scale(1.08);
   box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
 }
 
-
 .slider-arrow-left {
   left: 4px;
 }
 
-
 .slider-arrow-right {
   right: 4px;
 }
-
 
 .movie-grid:not(.landscape) {
   padding-top: 8px;
@@ -681,7 +641,71 @@ section {
 }
 
 /* =========================
-FOOTER
+  ADD MOVIE
+========================= */
+
+.add-movie-section {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 24px;
+  background: #181a1b;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.add-movie-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.add-movie-form input {
+  flex: 1;
+  min-width: 180px;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 8px;
+  outline: none;
+  background: #242729;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.add-movie-form input::placeholder {
+  color: #888888;
+}
+
+.add-movie-form input:focus {
+  border-color: rgba(255, 255, 255, .4);
+  background: #292c2e;
+}
+
+.add-movie-form button {
+  height: 46px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .2s ease;
+}
+
+.add-movie-form button:hover {
+  background: #dddddd;
+  transform: translateY(-1px);
+}
+
+/* =========================
+  FOOTER
 ========================= */
 
 .footer {
@@ -690,7 +714,6 @@ FOOTER
   background: #141617;
   border-top: 1px solid rgba(255, 255, 255, .15);
 }
-
 
 .footer-container {
   width: 100%;
@@ -703,20 +726,17 @@ FOOTER
   align-items: start;
 }
 
-
 .footer-brand {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-
 .footer-logo {
   width: 175px;
   height: auto;
   margin-bottom: 25px;
 }
-
 
 .footer-copyright {
   margin: 0;
@@ -725,12 +745,10 @@ FOOTER
   line-height: 1.6;
 }
 
-
 .footer-links {
   display: flex;
   flex-direction: column;
 }
-
 
 .footer-title {
   margin: 0 0 20px;
@@ -739,14 +757,12 @@ FOOTER
   font-weight: 600;
 }
 
-
 .footer-link-grid {
   display: grid;
   grid-template-columns: repeat(4, max-content);
   column-gap: 25px;
   row-gap: 14px;
 }
-
 
 .footer-link {
   color: #858585;
@@ -756,17 +772,14 @@ FOOTER
   transition: color .2s ease;
 }
 
-
 .footer-link:hover {
   color: #ffffff;
 }
-
 
 .footer-help {
   display: flex;
   flex-direction: column;
 }
-
 
 .footer-help-links {
   display: flex;
@@ -774,14 +787,12 @@ FOOTER
   gap: 14px;
 }
 
-
 .footer-help-link {
   color: #858585;
   font-size: 16px;
   line-height: 1.5;
   text-decoration: none;
 }
-
 
 .footer-help-link:hover {
   color: #ffffff;
@@ -792,7 +803,6 @@ FOOTER
 ========================= */
 
 @media (max-width: 768px) {
-
   /* =========================
     GLOBAL
   ========================= */
@@ -805,7 +815,6 @@ FOOTER
     width: 100%;
     overflow-x: hidden;
   }
-
 
   /* =========================
     NAVBAR
@@ -897,7 +906,6 @@ FOOTER
     font-size: 15px;
   }
 
-
   /* =========================
     HERO
   ========================= */
@@ -962,7 +970,6 @@ FOOTER
     font-size: 12px;
     line-height: 1.4;
     margin-bottom: 16px;
-
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -1002,7 +1009,6 @@ FOOTER
     height: 17px;
   }
 
-
   /* =========================
     MAIN CONTENT
   ========================= */
@@ -1011,7 +1017,6 @@ FOOTER
     width: 100%;
     padding: 30px 20px;
   }
-
 
   /* =========================
     MOVIE SECTION
@@ -1032,7 +1037,6 @@ FOOTER
     font-weight: 600;
     line-height: 1.2;
   }
-
 
   /* =========================
     MOVIE SLIDER
@@ -1060,7 +1064,6 @@ FOOTER
     display: none;
   }
 
-
   /* =========================
     PORTRAIT MOVIE
   ========================= */
@@ -1078,7 +1081,6 @@ FOOTER
     scroll-snap-align: start;
   }
 
-
   /* =========================
     LANDSCAPE MOVIE
   ========================= */
@@ -1095,7 +1097,6 @@ FOOTER
     border-radius: 7px;
     scroll-snap-align: start;
   }
-
 
   /* =========================
     MOVIE CARD
@@ -1127,7 +1128,6 @@ FOOTER
     transform: none;
     filter: none;
   }
-
 
   /* =========================
     MOVIE INFO
@@ -1228,7 +1228,6 @@ FOOTER
     height: 11px;
   }
 
-
   /* =========================
     LANDSCAPE INFO
   ========================= */
@@ -1240,7 +1239,6 @@ FOOTER
   .movie-grid.landscape .movie-card .movie-info {
     padding: 10px;
   }
-
 
   /* =========================
     SLIDER ARROWS
@@ -1269,7 +1267,6 @@ FOOTER
     right: 4px;
   }
 
-
   /* =========================
     MOVIE GRID DEFAULT
   ========================= */
@@ -1279,6 +1276,29 @@ FOOTER
     padding-bottom: 25px;
   }
 
+  /* =========================
+    ADD MOVIE
+  ========================= */
+
+  .add-movie-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 18px;
+  }
+
+  .add-movie-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-movie-form input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .add-movie-form button {
+    width: 100%;
+  }
 
   /* =========================
     FOOTER
@@ -1357,13 +1377,11 @@ FOOTER
   }
 }
 
-
 /* =========================
   SMALL MOBILE
 ========================= */
 
 @media (max-width: 480px) {
-
   .navbar {
     height: 58px;
     padding: 0 14px;
@@ -1395,7 +1413,6 @@ FOOTER
     font-size: 15px;
   }
 
-
   /* =========================
     HERO
   ========================= */
@@ -1426,7 +1443,6 @@ FOOTER
     padding: 7px 12px;
     font-size: 11px;
   }
-
 
   /* =========================
     MOVIE
@@ -1473,7 +1489,6 @@ FOOTER
   .slider-arrow-right {
     right: 2px;
   }
-
 
   /* =========================
     FOOTER

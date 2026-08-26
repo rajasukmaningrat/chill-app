@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AddMovie from "../components/home/AddMovie";
 
 import Navbar from "../components/home/Navbar";
 import Hero from "../components/home/Hero";
@@ -16,7 +15,7 @@ import avatar from "../assets/images/desktop/avatarD.png";
 import sonic from "../assets/images/desktop/sonicD.png";
 
 function Home() {
-  const [movies, setMovies] = useState([
+  const movies = [
     {
       id: 1,
       title: "Don't Look Up",
@@ -62,7 +61,7 @@ function Home() {
       type: "Movie",
       genres: ["Action", "Adventure", "Comedy"],
     },
-  ]);
+  ];
 
   const [newMovie, setNewMovie] = useState({
     title: "",
@@ -73,69 +72,13 @@ function Home() {
     genres: "",
   });
 
-  const [editMovie, setEditMovie] = useState(null);
-
-  const deleteMovie = (id) => {
-    setMovies((currentMovies) =>
-      currentMovies.filter((movie) => movie.id !== id)
-    );
-  };
-
-  const addMovie = (event) => {
-    event.preventDefault();
-
-    if (!newMovie.title || !newMovie.image || !newMovie.rating) return;
-
-    const movie = {
-      id: Date.now(),
-      title: newMovie.title,
-      image: newMovie.image,
-      rating: newMovie.rating,
-      age: newMovie.age,
-      type: newMovie.type,
-      genres: newMovie.genres.split(",").map((genre) => genre.trim()),
-    };
-
-    setMovies((currentMovies) => [...currentMovies, movie]);
-
-    setNewMovie({
-      title: "",
-      image: "",
-      rating: "",
-      age: "13+",
-      type: "Movie",
-      genres: "",
-    });
-  };
-
-  const updateMovie = (updatedMovie) => {
-    setMovies((currentMovies) =>
-      currentMovies.map((movie) =>
-        movie.id === updatedMovie.id ? updatedMovie : movie
-      )
-    );
-
-    setEditMovie(null);
-  };
-
   return (
     <>
       <Navbar />
       <Hero />
 
       <main className="main-content">
-        <Mood
-          movies={movies}
-          onDeleteMovie={deleteMovie}
-          onEditMovie={setEditMovie}
-        />
-
-        <AddMovie
-          newMovie={newMovie}
-          setNewMovie={setNewMovie}
-          onAddMovie={addMovie}
-        />
-
+        <Mood movies={movies}/>
         <Journal />
         <Music />
         <Sleep />

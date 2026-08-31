@@ -1,21 +1,12 @@
 import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Card from "../common/Card";
 
-import {
-  Play,
-  Check,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  Star,
-  Circle,
-} from "lucide-react";
-
-function Mood({ movies }) {
+function Mood({ movies, onDeleteMovie, onEditMovie }) {
   const movieGridRef = useRef(null);
 
   const scrollMovies = (direction) => {
     if (!movieGridRef.current) return;
-
     const scrollAmount = 350;
 
     movieGridRef.current.scrollBy({
@@ -24,78 +15,21 @@ function Mood({ movies }) {
     });
   };
 
+  if (!movies.length) return null;
+
   return (
     <section className="movie-section">
       <h2 className="section-title">Melanjutkan Tonton Film</h2>
-
       <div className="movie-slider">
-        <button
-          className="slider-arrow slider-arrow-left"
-          onClick={() => scrollMovies("left")}
-          aria-label="Film sebelumnya"
-        >
-          <ChevronLeft />
-        </button>
+        <button className="slider-arrow slider-arrow-left" onClick={() => scrollMovies("left")} aria-label="Film sebelumnya"><ChevronLeft /></button>
 
-        <div
-          className="movie-grid landscape"
-          ref={movieGridRef}
-        >
+        <div className="movie-grid landscape" ref={movieGridRef}>
           {movies.map((movie) => (
-            <div className="movie-card" key={movie.id}>
-              <img src={movie.image} alt={movie.title} />
-
-              <div className="movie-info">
-                <div className="movie-actions">
-                  <button className="play-button">
-                    <Play size={20} fill="currentColor" />
-                  </button>
-
-                  <button className="check-button">
-                    <Check size={20} />
-                  </button>
-
-                  <button className="more-button">
-                    <ChevronDown size={20} />
-                  </button>
-                </div>
-
-                <div className="movie-title-row">
-                  <h3>{movie.title}</h3>
-
-                  <span className="movie-rating">
-                    <Star size={14} fill="currentColor" />
-                    {movie.rating}
-                  </span>
-                </div>
-
-                <div className="movie-meta">
-                  <span className="age-rating">{movie.age}</span>
-                  <span>{movie.type}</span>
-                </div>
-
-                <div className="movie-genres">
-                  {movie.genres.map((genre, index) => (
-                    <span key={genre}>
-                      {index > 0 && (
-                        <Circle size={4} fill="currentColor" />
-                      )}
-                      {genre}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Card key={movie.id} movie={movie} onEdit={onEditMovie} onDelete={onDeleteMovie} />
           ))}
         </div>
 
-        <button
-          className="slider-arrow slider-arrow-right"
-          onClick={() => scrollMovies("right")}
-          aria-label="Film berikutnya"
-        >
-          <ChevronRight />
-        </button>
+        <button className="slider-arrow slider-arrow-right" onClick={() => scrollMovies("right")} aria-label="Film berikutnya"><ChevronRight /></button>
       </div>
     </section>
   );

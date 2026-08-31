@@ -1,84 +1,174 @@
-// import { auth } from "../config/firebase";
-// import { db } from "../config/firebase";
-import { GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from "firebase/auth";
-import { doc, setDoc, collection, query, where, getDocs } from "firebase/firestore";
+const API_URL =
+  "https://6a9502f30e895b145e5f9a1d.mockapi.io/api/v1/users";
 
-const provider = new GoogleAuthProvider();
-
-export const signInWithGoogle = async () => {
-  try {
-    const result = await signInWithPopup(auth, provider);
-    console.log("Login berhasil!");
-    console.log(result.user);
-    return result.user;
-  } catch (error) {
-    console.error("Login gagal:", error);
-  }
-};
-
+// CREATE USER
 export const registerWithUsername = async (userName, email, password) => {
   try {
-    const result = await createUserWithEmailAndPassword(auth, email, password);
-    await setDoc(doc(db, "users", result.user.uid), {
-      userName, email, createdAt: new Date(),
-    });
-    console.log("Registrasi berhasil!");
-    console.log(result.user);
-    return result.user;
-  } catch (error) {
-    console.error("Registrasi gagal:", error);
-    return null;
-  }
-};
+    // Cek apakah username sudah digunakan
+    const usernameResponse = await fetch(
+      `${API_URL}?userName=${encodeURIComponent(userName)}`
+    );
 
-// export const registerWithEmail = async (email, password) => {
-//   try {
-//     const result = await createUserWithEmailAndPassword(auth, email, password);
-//     return result.user;
-//   } catch (error) {
-//     console.error("Registrasi gagal:", error);
-//     return null;
-//   }
-// };
-
-export const loginWithUsername = async (userName, password) => {
-  try {
-    const usersRef = collection(db, "users");
-    const q = query(usersRef, where("userName", "==", userName));
-    const querySnapshot = await getDocs(q);
-
-    if (querySnapshot.empty) {
-      console.error("Username tidak ditemukan");
-      return null;
+    if (!usernameResponse.ok) {
+      throw new Error("Gagal mengecek username.");
     }
 
-    const userDoc = querySnapshot.docs[0];
-    const email = userDoc.data().email;
+    const existingUsers = await usernameResponse.json();
 
-    const result = await signInWithEmailAndPassword(auth, email, password);
-    return result.user;
+    if (existingUsers.length > 0) {
+      return {
+        success: false,
+        message: "Username sudah dipakai.",
+      };
+    }
+
+    // Cek apakah email sudah digunakan
+    const emailResponse = await fetch(
+      `${API_URL}?email=${encodeURIComponent(email)}`
+    );
+
+    if (!emailResponse.ok) {
+      throw new Error("Gagal mengecek email.");
+    }
+
+    const existingEmails = await emailResponse.json();
+
+    if (existingEmails.length > 0) {
+      return {
+        success: false,
+        message: "Email sudah digunakan.",
+      };
+    }
+
+    // Buat user baru
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName,
+        email,
+        password,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Registrasi gagal.");
+    }
+
+    const user = await response.json();
+
+    console.log("Registrasi berhasil!");
+    console.log(user);
+
+    return {
+      success: true,
+      user,
+    };
+  } catch (error) {
+    console.error("Registrasi gagal:", error);
+
+    return {
+      success: false,
+      message: "Terjadi kesalahan saat registrasi.",
+    };
+  }
+};
+
+// LOGIN USER
+export const loginWithUsername = async (userName, password) => {
+  try {
+    const response = await fetch(
+      `${API_URL}?userName=${encodeURIComponent(userName)}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Gagal mengambil data user.");
+    }
+
+    const users = await response.json();
+
+    if (users.length === 0) {
+      return {
+        success: false,
+        message: "Username tidak ditemukan.",
+      };
+    }
+
+    const user = users.find((u) => u.password === password);
+
+    if (!user) {
+      return {
+        success: false,
+        message: "Username atau password salah.",
+      };
+    }
+
+    console.log("Login berhasil!");
+    console.log(user);
+
+    return {
+      success: true,
+      user,
+    };
   } catch (error) {
     console.error("Login gagal:", error);
-    return null;
+
+    return {
+      success: false,
+      message: "Terjadi kesalahan saat login.",
+    };
   }
 };
 
+// LOGIN DENGAN EMAIL
 export const loginWithEmail = async (email, password) => {
   try {
-    const result = await signInWithEmailAndPassword(auth, email, password);
-    return result.user;
+    const response = await fetch(
+      `${API_URL}?email=${encodeURIComponent(email)}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Gagal mengambil data user.");
+    }
+
+    const users = await response.json();
+
+    if (users.length === 0) {
+      return {
+        success: false,
+        message: "Email tidak ditemukan.",
+      };
+    }
+
+    const user = users.find((u) => u.password === password);
+
+    if (!user) {
+      return {
+        success: false,
+        message: "Email atau password salah.",
+      };
+    }
+
+    console.log("Login berhasil!");
+    console.log(user);
+
+    return {
+      success: true,
+      user,
+    };
   } catch (error) {
-    console.error("kode error", error.code);
-    console.error("pesan:", error.message);
-    return null;
+    console.error("Login gagal:", error);
+
+    return {
+      success: false,
+      message: "Terjadi kesalahan saat login.",
+    };
   }
 };
 
-export const signOutUser = async () => {
-  try {
-    await signOut(auth);
-    console.log("Logout berhasil!");
-  } catch (error) {
-    console.error("Logout gagal:", error);
-  }
+// LOGOUT
+export const signOutUser = () => {
+  console.log("Logout berhasil!");
 };

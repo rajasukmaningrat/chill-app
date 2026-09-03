@@ -13,13 +13,13 @@ function Hero() {
     <section className="hero-section" style={{ backgroundImage: `linear-gradient(to right, rgba(0,0,0,.8) 20%, transparent),url(${heroImage})` }}>
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1 className="hero-title">My Hero Academia</h1>
+          <h1 className="hero-title">Duty After School</h1>
 
           <p className="hero-description">
-            Kisah ini berfokus pada perjalanan Midoriya saat ia masuk ke SMA
-            U.A., sebuah sekolah elit untuk melatih pahlawan masa depan.
-            Bersama teman-temannya, ia belajar mengendalikan kekuatannya dan
-            menghadapi League of Villains.
+            Sebuah kisah tentang sekelompok siswa SMA yang direkrut Departemen
+            Pertahanan untuk menyelidiki serangkaian insiden aneh yang terus
+            berulang di garis depan. Mereka harus bertahan hidup sekaligus
+            mengungkap misteri di balik semua kejadian tersebut.
           </p>
 
           <div className="hero-buttons">

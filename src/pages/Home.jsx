@@ -30,6 +30,8 @@ import antman from "../assets/images/mobile/antmanM.png";
 import rioM from "../assets/images/mobile/rioM.png";
 import shazamM from "../assets/images/mobile/shazamM.png";
 import fast10 from "../assets/images/mobile/fast10M.png";
+import dilan from "../assets/images/mobile/dilanM.png";
+import devilAllTime from "../assets/images/mobile/devilalltimeM.png";
 
 // trending
 
@@ -196,7 +198,7 @@ const initialMovies = [
   {
     id: 24,
     title: "Dilan",
-    image: "/src/assets/images/mobile/dilanM.png",
+    image: dilan,
     rating: "4.3/5",
     age: "13+",
     type: "Movie",
@@ -207,7 +209,7 @@ const initialMovies = [
   {
     id: 25,
     title: "The Devil All the Time",
-    image: "/src/assets/images/mobile/devilalltimeM.png",
+    image: devilAllTime,
     rating: "4.4/5",
     age: "17+",
     type: "Movie",
@@ -218,7 +220,7 @@ const initialMovies = [
   {
     id: 26,
     title: "M3GAN",
-    image: "/src/assets/images/mobile/meganM.png",
+    image: megan,
     rating: "4.5/5",
     age: "17+",
     type: "Movie",
@@ -285,7 +287,7 @@ const initialMovies = [
   {
     id: 27,
     title: "Guardians of the Galaxy",
-    image: "/src/assets/images/mobile/guardianM.png",
+    image: guardian,
     rating: "4.7/5",
     age: "13+",
     type: "Movie",
@@ -296,7 +298,7 @@ const initialMovies = [
   {
     id: 28,
     title: "Spider-Man: Miles Morales",
-    image: "/src/assets/images/mobile/morallesM.png",
+    image: moralles,
     rating: "4.8/5",
     age: "13+",
     type: "Movie",
@@ -307,7 +309,7 @@ const initialMovies = [
   {
     id: 29,
     title: "Blue Lock",
-    image: "/src/assets/images/mobile/bluelockM.png",
+    image: blueLock,
     rating: "4.7/5",
     age: "13+",
     type: "Series",
@@ -375,7 +377,7 @@ const initialMovies = [
   {
     id: 30,
     title: "Ant-Man",
-    image: "/src/assets/images/mobile/antmanM.png",
+    image: antman,
     rating: "4.4/5",
     age: "13+",
     type: "Movie",
@@ -386,7 +388,7 @@ const initialMovies = [
   {
     id: 31,
     title: "Rio",
-    image: "/src/assets/images/mobile/rioM.png",
+    image: rioM,
     rating: "4.3/5",
     age: "SU",
     type: "Movie",
@@ -397,7 +399,7 @@ const initialMovies = [
   {
     id: 32,
     title: "Shazam!",
-    image: "/src/assets/images/mobile/shazamM.png",
+    image: shazamM,
     rating: "4.4/5",
     age: "13+",
     type: "Movie",

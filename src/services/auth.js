@@ -4,36 +4,35 @@ const API_URL =
 // CREATE USER
 export const registerWithUsername = async (userName, email, password) => {
   try {
-    // Cek apakah username sudah digunakan
-    const usernameResponse = await fetch(
-      `${API_URL}?userName=${encodeURIComponent(userName)}`
-    );
+    // Ambil semua user
+    const usersResponse = await fetch(API_URL);
 
-    if (!usernameResponse.ok) {
-      throw new Error("Gagal mengecek username.");
+    if (!usersResponse.ok) {
+      throw new Error("Gagal mengambil data user.");
     }
 
-    const existingUsers = await usernameResponse.json();
+    const users = await usersResponse.json();
 
-    if (existingUsers.length > 0) {
+    // Cek username
+    const usernameExists = users.some(
+      (user) =>
+        user.userName?.toLowerCase() === userName.trim().toLowerCase()
+    );
+
+    if (usernameExists) {
       return {
         success: false,
         message: "Username sudah dipakai.",
       };
     }
 
-    // Cek apakah email sudah digunakan
-    const emailResponse = await fetch(
-      `${API_URL}?email=${encodeURIComponent(email)}`
+    // Cek email
+    const emailExists = users.some(
+      (user) =>
+        user.email?.toLowerCase() === email.trim().toLowerCase()
     );
 
-    if (!emailResponse.ok) {
-      throw new Error("Gagal mengecek email.");
-    }
-
-    const existingEmails = await emailResponse.json();
-
-    if (existingEmails.length > 0) {
+    if (emailExists) {
       return {
         success: false,
         message: "Email sudah digunakan.",
@@ -47,8 +46,8 @@ export const registerWithUsername = async (userName, email, password) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        userName,
-        email,
+        userName: userName.trim(),
+        email: email.trim(),
         password,
       }),
     });

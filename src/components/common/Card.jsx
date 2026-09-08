@@ -34,7 +34,7 @@ function Card({ movie, onEdit, onDelete }) {
           )}
 
           {onDelete && (
-            <button className="more-button" onClick={stopAnd(() => onDelete(movie.id))} aria-label="Hapus">
+            <button className="more-button" onClick={stopAnd(() => onDelete(movie))} aria-label="Hapus">
               <Trash2 size={18} />
             </button>
           )}

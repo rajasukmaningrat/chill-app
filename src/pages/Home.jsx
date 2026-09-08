@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { getMovies, createMovie, updateMovie, deleteMovieApi } from "../services/api/movie";
 
 import Navbar from "../components/home/Navbar";
 import Hero from "../components/home/Hero";
@@ -47,10 +48,65 @@ import moralles from "../assets/images/mobile/morallesM.png";
 import stuartLittle from "../assets/images/mobile/stuartlittelM.png";
 import megan from "../assets/images/mobile/meganM.png";
 
-const initialMovies = [
-  // ==ini siasi semunay
-  // mwlanjutklan nootn
+const movieImages = {
+  dontLookup,
+  batman,
+  blackAdam,
+  avatarD,
+  sonicD,
+  alice,
+  bnhaD,
+  dutyD,
+  avatarM,
+  antman,
+  rioM,
+  shazamM,
+  fast10,
+  dilan,
+  devilAllTime,
+  tomorrow,
+  happines,
+  littleMermaid,
+  blueLock,
+  guardian,
+  moralles,
+  stuartLittle,
+  megan,
+};
 
+const mapMovieFromApi = (movie) => ({
+  ...movie,
+  image: movieImages[movie.imageKey] ?? "",
+});
+
+const imageKeyBySrc = {
+  [dontLookup]: "dontLookup",
+  [batman]: "batman",
+  [blackAdam]: "blackAdam",
+  [avatarD]: "avatarD",
+  [sonicD]: "sonicD",
+  [alice]: "alice",
+  [bnhaD]: "bnhaD",
+  [dutyD]: "dutyD",
+  [avatarM]: "avatarM",
+  [antman]: "antman",
+  [rioM]: "rioM",
+  [shazamM]: "shazamM",
+  [fast10]: "fast10",
+  [dilan]: "dilan",
+  [devilAllTime]: "devilAllTime",
+  [tomorrow]: "tomorrow",
+  [happines]: "happines",
+  [littleMermaid]: "littleMermaid",
+  [blueLock]: "blueLock",
+  [guardian]: "guardian",
+  [moralles]: "moralles",
+  [stuartLittle]: "stuartLittle",
+  [megan]: "megan",
+};
+
+const initialMovies = [
+  // mwlanjutklan nonton
   {
     id: 1,
     title: "Don't Look Up",
@@ -412,25 +468,101 @@ function Home() {
   const [movies, setMovies] = useState(initialMovies);
   const [editMovie, setEditMovie] = useState(null);
   const [movieToDelete, setMovieToDelete] = useState(null);
+  const seedStarted = useRef(false);
+
+  const seedMovies = async () => {
+    try {
+      const existingMovies = await getMovies();
+
+      if (existingMovies.length > 0) {
+        console.log("Movie sudah ada, seed dibatalkan.");
+        return;
+      }
+
+      for (const movie of initialMovies) {
+        const movieData = {
+          title: movie.title,
+          imageKey: imageKeyBySrc[movie.image],
+          rating: movie.rating,
+          age: movie.age,
+          type: movie.type,
+          genres: movie.genres,
+          section: movie.section,
+        };
+
+        const result = await createMovie(movieData);
+
+        console.log("Berhasil tambah:", result);
+      }
+
+      console.log("SELESAI SEED MOVIE");
+    } catch (error) {
+      console.error("Gagal seed movie:", error);
+    }
+  };
+
+  const loadMovies = async () => {
+    try {
+      const data = await getMovies();
+
+      const moviesFromApi = data.map(mapMovieFromApi);
+
+      setMovies(moviesFromApi);
+
+      console.log("Movie dari API:", moviesFromApi);
+    } catch (error) {
+      console.error("Gagal mengambil movie:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (seedStarted.current) return;
+
+    seedStarted.current = true;
+
+    const loadData = async () => {
+      try {
+        const existingMovies = await getMovies();
+
+        if (existingMovies.length === 0) {
+          await seedMovies();
+        }
+
+        await loadMovies();
+      } catch (error) {
+        console.error("Gagal memuat movie:", error);
+      }
+    };
+
+    loadData();
+  }, []);
 
   const bySection = (section) => {
     return movies.filter((movie) => movie.section === section);
   };
 
-  // Membuka confirmation modal
   const confirmDeleteMovie = (movie) => {
     setMovieToDelete(movie);
   };
 
-  // Menghapus movie setelah user menekan tombol Hapus
-  const deleteMovie = () => {
+  const deleteMovie = async () => {
     if (!movieToDelete) return;
 
-    setMovies((currentMovies) =>
-      currentMovies.filter((movie) => movie.id !== movieToDelete.id)
-    );
+    try {
+      await deleteMovieApi(movieToDelete.id);
 
-    setMovieToDelete(null);
+      setMovies((currentMovies) =>
+        currentMovies.filter(
+          (movie) => movie.id !== movieToDelete.id
+        )
+      );
+
+      setMovieToDelete(null);
+
+      console.log("Berhasil menghapus movie");
+    } catch (error) {
+      console.error("Gagal menghapus movie:", error);
+    }
   };
 
   const openEditMovie = (movie) => {
@@ -442,7 +574,7 @@ function Home() {
     });
   };
 
-  const submitEditMovie = (event) => {
+  const submitEditMovie = async (event) => {
     event.preventDefault();
 
     if (!editMovie) return;
@@ -458,13 +590,40 @@ function Home() {
           : editMovie.genres || [],
     };
 
-    setMovies((currentMovies) =>
-      currentMovies.map((movie) =>
-        movie.id === updatedMovie.id ? updatedMovie : movie
-      )
-    );
+    const movieData = {
+      title: updatedMovie.title,
+      imageKey:
+        imageKeyBySrc[updatedMovie.image] ||
+        updatedMovie.imageKey,
+      rating: updatedMovie.rating,
+      age: updatedMovie.age,
+      type: updatedMovie.type,
+      genres: updatedMovie.genres,
+      section: updatedMovie.section,
+    };
 
-    setEditMovie(null);
+    try {
+      const result = await updateMovie(
+        updatedMovie.id,
+        movieData
+      );
+
+      console.log("Berhasil update:", result);
+
+      const updatedMovieFromApi = mapMovieFromApi(result);
+
+      setMovies((currentMovies) =>
+        currentMovies.map((movie) =>
+          movie.id === updatedMovieFromApi.id
+            ? updatedMovieFromApi
+            : movie
+        )
+      );
+
+      setEditMovie(null);
+    } catch (error) {
+      console.error("Gagal update movie:", error);
+    }
   };
 
   return (

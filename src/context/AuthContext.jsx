@@ -5,7 +5,7 @@ import {
   loginWithUsername,
   loginWithEmail,
   signOutUser,
-} from "../services/auth";
+} from "../services/api/auth";
 
 const AuthContext = createContext();
 

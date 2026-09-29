@@ -32,7 +32,8 @@ function BrowseHero({ movie, genres, genre, onGenreChange, onPlay, onMore }) {
         </p>
 
         <div className="browse-hero-actions">
-          <button className="btn-play" onClick={onPlay}>
+          {/* onPlay harus dapat movie-nya, bukan event klik */}
+          <button className="btn-play" onClick={() => onPlay?.(movie)}>
             Mulai
           </button>
 

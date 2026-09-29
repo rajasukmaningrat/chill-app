@@ -172,3 +172,41 @@ export const loginWithEmail = async (email, password) => {
 export const signOutUser = () => {
   console.log("Logout berhasil!");
 };
+
+// GET USER LENGKAP UNTUK HALAMAN PROFIL
+// Session di localStorage hanya menyimpan id, username, dan email
+export const getUserById = async (userId) => {
+  const response = await fetch(`${USERS_URL}?id=${encodeURIComponent(userId)}`);
+
+  if (!response.ok) {
+    throw new Error("Gagal mengambil data user.");
+  }
+
+  const users = await response.json();
+
+  if (users.length === 0) {
+    throw new Error("User tidak ditemukan.");
+  }
+
+  return users[0];
+};
+
+// UBAH DATA USER DARI HALAMAN PROFIL
+export const updateUser = async (userId, changes) => {
+  const response = await fetch(
+    `${USERS_URL}/${encodeURIComponent(userId)}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(changes),
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Gagal mengubah data user.");
+  }
+
+  return response.json();
+};

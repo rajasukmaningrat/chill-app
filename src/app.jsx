@@ -5,6 +5,10 @@ import Home from "./pages/Home";
 import Series from "./pages/Series";
 import Film from "./pages/Film";
 import DaftarSaya from "./pages/DaftarSaya";
+import PilihPaket from "./pages/PilihPaket";
+import Pembayaran from "./pages/Pembayaran";
+import MenungguPembayaran from "./pages/MenungguPembayaran";
+import Profil from "./pages/Profil";
 
 function App() {
   return (
@@ -17,6 +21,13 @@ function App() {
         <Route path="/series" element={<Series />} />
         <Route path="/film" element={<Film />} />
         <Route path="/my-list" element={<DaftarSaya />} />
+        <Route path="/pilih-paket" element={<PilihPaket />} />
+        <Route path="/pembayaran" element={<Pembayaran />} />
+        <Route
+          path="/pembayaran/menunggu/:orderId"
+          element={<MenungguPembayaran />}
+        />
+        <Route path="/profil" element={<Profil />} />
       </Routes>
     </BrowserRouter>
   );

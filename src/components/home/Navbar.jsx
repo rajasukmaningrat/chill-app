@@ -53,12 +53,12 @@ function Navbar() {
         </label>
 
         <div className="dropdown-content">
-          <Link to="#" className="menu-item">
+          <Link to="/profil" className="menu-item">
             <User className="menu-icon" />
             <span>Profile Saya</span>
           </Link>
 
-          <Link to="#" className="menu-item">
+          <Link to="/pilih-paket" className="menu-item">
             <Star className="menu-icon" />
             <span>Ubah Premium</span>
           </Link>

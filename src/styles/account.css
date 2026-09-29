@@ -1,0 +1,732 @@
+/* =========================
+  AKUN (Pilih Paket, Pembayaran, Menunggu, Profil)
+========================= */
+
+.account-page {
+  min-height: 60vh;
+  padding: 130px 4.2% 50px;
+}
+
+.account-title {
+  margin: 0 0 26px;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.payment-heading {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* =========================
+  KEUNTUNGAN BERLANGGANAN
+========================= */
+
+.benefit-section {
+  margin-bottom: 60px;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  background: #1f1f1f;
+  color: #d5d5d5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.benefit-item svg {
+  flex-shrink: 0;
+  color: #0f0fff;
+}
+
+/* =========================
+  PAKET
+========================= */
+
+.package-section {
+  margin-bottom: 30px;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.package-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  background: #1f1f1f;
+}
+
+.package-card.is-selected {
+  border-color: #0f0fff;
+  box-shadow: 0 0 0 1px #0f0fff;
+}
+
+.package-name {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.package-price {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.package-period {
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.package-accounts {
+  margin: 0 0 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
+  flex: 1;
+}
+
+.package-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #d5d5d5;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.package-features svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #ffc400;
+}
+
+.package-card .btn-info,
+.package-card .btn-play {
+  width: 100%;
+  text-align: center;
+}
+
+.package-card .btn-info.is-selected {
+  border-color: #0f0fff;
+  color: #ffffff;
+}
+
+/* =========================
+  PEMBAYARAN
+========================= */
+
+.payment-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.payment-package .package-card {
+  position: sticky;
+  top: 110px;
+}
+
+.method-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  background: #1f1f1f;
+  color: #d5d5d5;
+  text-align: left;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.method-item.is-active {
+  border-color: #0f0fff;
+  background: #23252b;
+  color: #ffffff;
+}
+
+.method-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.method-text strong {
+  font-size: 15px;
+}
+
+.method-text small {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.voucher-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.voucher-input {
+  flex: 1;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  background: #1f1f1f;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+}
+
+.voucher-input:focus {
+  border-color: #0f0fff;
+}
+
+.voucher-row .btn-info {
+  height: 46px;
+  white-space: nowrap;
+}
+
+.payment-hint {
+  margin: -18px 0 30px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  background: #1f1f1f;
+}
+
+.summary-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #d5d5d5;
+  font-size: 15px;
+}
+
+.summary-total {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  font-size: 18px !important;
+}
+
+.payment-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  color: #111111;
+}
+
+.payment-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+  MENUNGGU PEMBAYARAN
+========================= */
+
+.waiting-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  background: #1f1f1f;
+}
+
+.waiting-lead {
+  margin: -12px 0 28px;
+  color: #d5d5d5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.countdown-box {
+  margin-bottom: 28px;
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  background: #181a1b;
+  text-align: center;
+}
+
+.countdown-label {
+  margin: 0 0 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.countdown-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.countdown-value i {
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
+.countdown-note {
+  margin: 12px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.waiting-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  background: #181a1b;
+}
+
+.waiting-detail li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #d5d5d5;
+  font-size: 15px;
+}
+
+.va-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.va-code {
+  padding: 6px 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.va-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+  counter-reset: step;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #d5d5d5;
+  font-size: 15px;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #0f0fff;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.waiting-back {
+  display: inline-block;
+}
+
+/* =========================
+  PROFIL
+========================= */
+
+.profil-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  align-items: start;
+}
+
+.profil-avatar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.profil-avatar img,
+.profil-avatar-empty {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.profil-avatar-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f1f1f;
+  color: var(--text-secondary);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.avatar-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.avatar-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.field-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.field-row label {
+  flex: 0 0 140px;
+  color: #d5d5d5;
+  font-size: 15px;
+}
+
+.field-row input {
+  flex: 1;
+  height: 46px;
+  padding: 0 46px 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  background: #1f1f1f;
+  color: var(--text-primary);
+  font-size: 15px;
+  outline: none;
+}
+
+.field-row input:focus {
+  border-color: #0f0fff;
+}
+
+.field-edit {
+  position: absolute;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-edit:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.profil-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  margin-top: 6px;
+  color: #111111;
+}
+
+.subscribe-card {
+  padding: 28px;
+  border-radius: var(--radius-md);
+  background: #2a2d30;
+  text-align: center;
+}
+
+.subscribe-card h2 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.subscribe-card p {
+  margin: 0 0 20px;
+  color: #d5d5d5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.subscribe-cta {
+  display: block;
+  padding: 13px;
+  border-radius: 6px;
+  background: #8a8f98;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.subscribe-cta:hover {
+  background: #9ba1aa;
+  color: #ffffff;
+}
+
+.subscribe-card.is-premium {
+  background: #0f0fff;
+}
+
+.subscribe-plan {
+  margin: 0 0 6px !important;
+  font-size: 18px !important;
+  font-weight: 700;
+}
+
+.subscribe-expiry {
+  margin: 0 0 20px !important;
+  font-size: 14px !important;
+}
+
+.subscribe-card .btn-info {
+  display: inline-block;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.profil-mylist {
+  margin-top: 34px;
+}
+
+.profil-mylist-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.profil-mylist-head h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.profil-mylist-link {
+  font-size: 14px;
+}
+
+.profil-mylist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.profil-mylist-grid .poster-card {
+  flex: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+}
+
+.profil-mylist-grid .poster-card:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+  RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .account-page {
+    padding: 100px 16px 40px;
+  }
+
+  .account-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .benefit-section {
+    margin-bottom: 40px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .benefit-item {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .package-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .package-card {
+    padding: 24px 20px;
+  }
+
+  .package-name {
+    font-size: 21px;
+  }
+
+  .package-price {
+    font-size: 24px;
+  }
+
+  .payment-layout {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .payment-package .package-card {
+    position: static;
+  }
+
+  .method-list {
+    grid-template-columns: 1fr;
+  }
+
+  .voucher-row {
+    flex-direction: column;
+  }
+
+  .voucher-row .btn-info {
+    width: 100%;
+  }
+
+  .payment-button {
+    width: 100%;
+  }
+
+  .waiting-card {
+    padding: 24px 18px;
+  }
+
+  .countdown-value {
+    font-size: 32px;
+    gap: 6px;
+  }
+
+  .waiting-detail li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .profil-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .profil-avatar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .field-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .field-row input {
+    padding-right: 46px;
+  }
+
+  .profil-save {
+    width: 100%;
+  }
+
+  .profil-mylist-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}

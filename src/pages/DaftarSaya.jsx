@@ -6,17 +6,20 @@ import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import PosterCard from "../components/browse/PosterCard";
 import DetailModal from "../components/browse/DetailModal";
+import PremiumModal from "../components/browse/PremiumModal";
 import Loading from "../components/common/Loading";
 
 import { useAuth } from "../context/AuthContext";
+import { usePremiumPlayback } from "../hooks/usePremiumPlayback";
 
 import { fetchMovies } from "../store/slices/movieSlice";
 import { fetchMyList } from "../store/slices/mylistSlice";
 import { buildEpisodeCount } from "../utils/browse";
 
-function DaftarSaya({ onPlay }) {
+function DaftarSaya() {
   const dispatch = useDispatch();
   const { user } = useAuth();
+  const { handlePlay, premiumMovie, closePremium } = usePremiumPlayback();
 
   const [detailMovie, setDetailMovie] = useState(null);
 
@@ -85,7 +88,7 @@ function DaftarSaya({ onPlay }) {
                 key={movie.id}
                 movie={movie}
                 episodesCount={episodeCount[String(movie.id)] || 0}
-                onPlay={onPlay}
+                onPlay={handlePlay}
                 onOpenDetail={setDetailMovie}
               />
             ))}
@@ -99,9 +102,11 @@ function DaftarSaya({ onPlay }) {
         movie={detailMovie}
         movies={movies}
         onClose={() => setDetailMovie(null)}
-        onPlay={onPlay}
+        onPlay={handlePlay}
         onOpenDetail={setDetailMovie}
       />
+
+      <PremiumModal movie={premiumMovie} onClose={closePremium} />
     </>
   );
 }

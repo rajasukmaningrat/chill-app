@@ -6,9 +6,11 @@ import Footer from "../components/home/Footer";
 import BrowseHero from "../components/browse/BrowseHero";
 import Carousel from "../components/browse/Carousel";
 import DetailModal from "../components/browse/DetailModal";
+import PremiumModal from "../components/browse/PremiumModal";
 import Loading from "../components/common/Loading";
 
 import { useAuth } from "../context/AuthContext";
+import { usePremiumPlayback } from "../hooks/usePremiumPlayback";
 
 import { fetchMovies } from "../store/slices/movieSlice";
 import { fetchMyList } from "../store/slices/mylistSlice";
@@ -26,9 +28,10 @@ import {
 } from "../utils/browse";
 
 // Series dan Film memakai tampilan yang sama, hanya bedanya type movie
-function BrowsePage({ type, onPlay }) {
+function BrowsePage({ type }) {
   const dispatch = useDispatch();
   const { user } = useAuth();
+  const { handlePlay, premiumMovie, closePremium } = usePremiumPlayback();
 
   const [genre, setGenre] = useState(ALL_GENRE);
   const [detailMovie, setDetailMovie] = useState(null);
@@ -82,7 +85,7 @@ function BrowsePage({ type, onPlay }) {
           genres={genres}
           genre={genre}
           onGenreChange={setGenre}
-          onPlay={onPlay}
+          onPlay={handlePlay}
           onMore={() => setDetailMovie(heroMovie)}
         />
 
@@ -102,7 +105,7 @@ function BrowsePage({ type, onPlay }) {
               variant={section.variant}
               movies={getSectionMovies(filteredMovies, section.key)}
               episodeCount={episodeCount}
-              onPlay={onPlay}
+              onPlay={handlePlay}
               onOpenDetail={setDetailMovie}
             />
           ))
@@ -115,9 +118,11 @@ function BrowsePage({ type, onPlay }) {
         movie={detailMovie}
         movies={movies}
         onClose={() => setDetailMovie(null)}
-        onPlay={onPlay}
+        onPlay={handlePlay}
         onOpenDetail={setDetailMovie}
       />
+
+      <PremiumModal movie={premiumMovie} onClose={closePremium} />
     </>
   );
 }

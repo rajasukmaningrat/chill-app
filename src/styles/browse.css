@@ -604,6 +604,98 @@
 }
 
 /* =========================
+  PREMIUM MODAL
+========================= */
+
+.premium-overlay {
+  align-items: center;
+}
+
+.premium-modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 34px 30px 28px;
+  border: 1px solid rgba(255, 196, 0, 0.35);
+  border-radius: var(--radius-md);
+  background: #1f1f1f;
+  text-align: center;
+}
+
+.premium-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.premium-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: rgba(255, 196, 0, 0.15);
+  color: #ffc400;
+}
+
+.premium-title {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.premium-text {
+  margin: 0 0 26px;
+  color: #d5d5d5;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.premium-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.premium-primary {
+  width: 100%;
+  justify-content: center;
+  color: #111111;
+}
+
+.premium-secondary {
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  background: transparent;
+  color: #d5d5d5;
+  font-size: 15px;
+}
+
+.premium-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* =========================
   RESPONSIVE
 ========================= */
 
@@ -777,6 +869,22 @@
   .daftar-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+  }
+
+  /* =========================
+    PREMIUM MODAL
+  ========================= */
+
+  .premium-modal {
+    padding: 28px 22px 22px;
+  }
+
+  .premium-title {
+    font-size: 20px;
+  }
+
+  .premium-text {
+    font-size: 14px;
   }
 }
 

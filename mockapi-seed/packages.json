@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Individual",
+    "price": 100000,
+    "accounts": 1,
+    "adminFee": 3000,
+    "features": [
+      "1 akun yang bisa dipakai",
+      "Akses semua konten Premium",
+      "Tonton di HP, tablet, laptop, dan TV",
+      "Kualitas hingga 1080p"
+    ]
+  },
+  {
+    "name": "Berdua",
+    "price": 150000,
+    "accounts": 2,
+    "adminFee": 3000,
+    "features": [
+      "2 akun yang bisa dipakai",
+      "Akses semua konten Premium",
+      "Tonton di HP, tablet, laptop, dan TV",
+      "Kualitas hingga 1080p",
+      "Tonton bersamaan di 2 perangkat"
+    ]
+  },
+  {
+    "name": "Keluarga",
+    "price": 200000,
+    "accounts": 4,
+    "adminFee": 3000,
+    "features": [
+      "4 akun yang bisa dipakai",
+      "Akses semua konten Premium",
+      "Tonton di HP, tablet, laptop, dan TV",
+      "Kualitas hingga 4K dan HDR",
+      "Tonton bersamaan di 4 perangkat"
+    ]
+  }
+]

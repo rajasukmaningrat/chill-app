@@ -1,0 +1,440 @@
+[
+  {
+    "id": "1",
+    "title": "Don't Look Up",
+    "type": "Movie",
+    "section": "continue",
+    "description": "Dua astronom menemukan kometa yang bisa menghantam bumi.",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Jennifer Lawrence",
+      "Miley Cyrus"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "2",
+    "title": "Batman",
+    "type": "Movie",
+    "section": "continue",
+    "description": "Bruce Wayne kembali ke Gotham untuk memperjuangkan keadilan.",
+    "cast": [
+      "Robert Pattinson",
+      "Zoe Kravitz",
+      "Paul Dano",
+      "Jeffrey Wright"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "3",
+    "title": "Black Adam",
+    "type": "Movie",
+    "section": "continue",
+    "description": "Seorang nomad yang terlahir dengan kekuatan dewa kembali ke zaman modern.",
+    "cast": [
+      "Dwayne Johnson",
+      "Sarah Shahi",
+      "Henry Winkler",
+      "Ed Asner"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "4",
+    "title": "Avatar",
+    "type": "Movie",
+    "section": "continue",
+    "description": "Seorang nautilus yang lumpuh dikirim ke planet Pandora.",
+    "cast": [
+      "Sam Worthington",
+      "Zoe Saldana",
+      "Sigourney Weaver",
+      "Stephen Lang"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "5",
+    "title": "Sonic The Hedgehog",
+    "type": "Movie",
+    "section": "continue",
+    "description": "Sonic bersekutu dengan Tails untuk mengalahkan Dr. Eggman.",
+    "cast": [
+      "Jim Carrey",
+      "James Marsden",
+      "Ben Schwartz",
+      "Tika Sumpter"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "6",
+    "title": "Alice in Borderland",
+    "type": "Series",
+    "section": "continue",
+    "description": "Seorang siswa SMA tiba-tiba masuk ke kota misterius dan harus bertahan hidup.",
+    "cast": [
+      "Kento Yamazaki",
+      "Tao Tsuchiya",
+      "Risa Sudo"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "7",
+    "title": "My Hero Academia",
+    "type": "Series",
+    "section": "continue",
+    "description": "Dunia tanpa superhero mendapatkan satu Quirk. Seorang pemuda tanpa kekuatan bertekad jadi pahlawan.",
+    "cast": [
+      "Daiki Yamashita",
+      "Nobuhiko Okamoto",
+      "Yuki Kaji"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "8",
+    "title": "Duty After School",
+    "type": "Series",
+    "section": "continue",
+    "description": "Sekelompok siswa SMA direkrut Departemen Pertahanan untuk menyelidiki insiden aneh.",
+    "cast": [
+      "Kanon Takao",
+      "Rena Hasegawa",
+      "Tasuku Hatanaka",
+      "Yu Serizawa"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "9",
+    "title": "Avatar",
+    "type": "Movie",
+    "section": "top",
+    "description": "Seorang nautilus yang lumpuh dikirim ke planet Pandora.",
+    "cast": [
+      "Sam Worthington",
+      "Zoe Saldana",
+      "Sigourney Weaver",
+      "Stephen Lang"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "10",
+    "title": "Ant-Man",
+    "type": "Movie",
+    "section": "top",
+    "description": "Seorang pencuri dibelotakkan superhero yang bisa menyusut ukuran badannya.",
+    "cast": [
+      "Paul Rudd",
+      "Michael Douglas",
+      "Evangeline Lilly",
+      "Corey Stoll"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "11",
+    "title": "Rio",
+    "type": "Movie",
+    "section": "top",
+    "description": "Burung kakatu yang dipelihara di kota menemukan persahabatan di perjalanan.",
+    "cast": [
+      "Jesse Eisenberg",
+      "Anne Hathaway",
+      "Leslie Mann",
+      "Will.i.am"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "12",
+    "title": "Shazam!",
+    "type": "Movie",
+    "section": "top",
+    "description": "Seorang anak piatu mendapat kekuatan Zeus dan jadi superhero paling galak.",
+    "cast": [
+      "Zachary Levi",
+      "Asher Angel",
+      "Jack Dylan Grazer",
+      "Djimon Hounsou"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "13",
+    "title": "Fast X",
+    "type": "Movie",
+    "section": "top",
+    "description": "Dom Toretto berhadapan dengan musuh yang membenci timnya.",
+    "cast": [
+      "Vin Diesel",
+      "Michelle Rodriguez",
+      "Jason Momoa",
+      "Alan Ritchson"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "14",
+    "title": "Dilan",
+    "type": "Movie",
+    "section": "top",
+    "description": "Seorang siswa SMA jatuh cinta pada Dilan di Bandung.",
+    "cast": [
+      "Ikha Elsya",
+      "Chicco Jerikho",
+      "Raka Zikri",
+      "Aefy Pratama"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "15",
+    "title": "The Devil All the Time",
+    "type": "Movie",
+    "section": "top",
+    "description": "Seorang pendeta di kota kecil dihantui dosa masa lalu.",
+    "cast": [
+      "Tom Holland",
+      "Riley Keough",
+      "Sebastian Stan"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "16",
+    "title": "M3GAN",
+    "type": "Movie",
+    "section": "top",
+    "description": "Seorang anak yatim piatu mendapat boneka AI yang mulai bernapas.",
+    "cast": [
+      "Allison Williams",
+      "Violet McGraw",
+      "Paul Ready",
+      "Ronny Cox"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "17",
+    "title": "Shazam!",
+    "type": "Movie",
+    "section": "trending",
+    "description": "Seorang anak piatu mendapat kekuatan Zeus dan jadi superhero paling galak.",
+    "cast": [
+      "Zachary Levi",
+      "Asher Angel",
+      "Jack Dylan Grazer",
+      "Djimon Hounsou"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "18",
+    "title": "The Tomorrow War",
+    "type": "Movie",
+    "section": "trending",
+    "description": "Tentara dari masa depan datang ke masa kini untuk meminta bantuan.",
+    "cast": [
+      "Chris Pratt",
+      "J.K. Simmons",
+      "Olivia Taylor Dudley",
+      "Edwin Hodge"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "19",
+    "title": "Happiness",
+    "type": "Series",
+    "section": "trending",
+    "description": "Seorang murid menemukan rahasia tentang masa kecilnya.",
+    "cast": [
+      "Song Kang",
+      "Park Hyung-sik",
+      "Han So-hee"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "20",
+    "title": "The Little Mermaid",
+    "type": "Movie",
+    "section": "trending",
+    "description": "Putri laut jatuh cinta pada manusia dan bertukar tubuh dengannya.",
+    "cast": [
+      "Halle Bailey",
+      "Jonah Hauer-King",
+      "David Krumholtz",
+      "Idina Menzel"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "21",
+    "title": "Blue Lock",
+    "type": "Series",
+    "section": "trending",
+    "description": "Seorang striker direkrut ke tim khusus untuk menang bersama.",
+    "cast": [
+      "Kazuki Ura",
+      "Yusuke Kobayashi",
+      "Atsushi Abe"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "22",
+    "title": "Guardians of the Galaxy",
+    "type": "Movie",
+    "section": "trending",
+    "description": "Sekelompok penjelajah luar biasa menyatukan kekuatan mereka.",
+    "cast": [
+      "Chris Pratt",
+      "Zoe Saldana",
+      "Dave Bautista",
+      "Karen Gillan"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "23",
+    "title": "Spider-Man: Miles Morales",
+    "type": "Movie",
+    "section": "trending",
+    "description": "Miles Morales mewarisi kekuatan Spider-Man. Dia harus menemukan jalurnya sendiri.",
+    "cast": [
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Jake Johnson"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "24",
+    "title": "Blue Lock",
+    "type": "Series",
+    "section": "trending",
+    "description": "Seorang striker direkrut ke tim khusus untuk menang bersama.",
+    "cast": [
+      "Kazuki Ura",
+      "Yusuke Kobayashi",
+      "Atsushi Abe"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "25",
+    "title": "Guardians of the Galaxy",
+    "type": "Movie",
+    "section": "new",
+    "description": "Sekelompok penjelajah luar biasa menyatukan kekuatan mereka.",
+    "cast": [
+      "Chris Pratt",
+      "Zoe Saldana",
+      "Dave Bautista",
+      "Karen Gillan"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "26",
+    "title": "Spider-Man: Miles Morales",
+    "type": "Movie",
+    "section": "new",
+    "description": "Miles Morales mewarisi kekuatan Spider-Man. Dia harus menemukan jalurnya sendiri.",
+    "cast": [
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Jake Johnson"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "27",
+    "title": "Rio",
+    "type": "Movie",
+    "section": "new",
+    "description": "Burung kakatu yang dipelihara di kota menemukan persahabatan di perjalanan.",
+    "cast": [
+      "Jesse Eisenberg",
+      "Anne Hathaway",
+      "Leslie Mann",
+      "Will.i.am"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "28",
+    "title": "Stuart Little",
+    "type": "Movie",
+    "section": "new",
+    "description": "Keluarga Little menerima seekor tikus. Petualangan luar biasa dimulai dari rumah.",
+    "cast": [
+      "Geena Davis",
+      "Hugh Laurie",
+      "Jonathan Lipnicki"
+    ],
+    "isPremium": true
+  },
+  {
+    "id": "29",
+    "title": "M3GAN",
+    "type": "Movie",
+    "section": "new",
+    "description": "Seorang anak yatim piatu mendapat boneka AI yang mulai bernapas.",
+    "cast": [
+      "Allison Williams",
+      "Violet McGraw",
+      "Paul Ready",
+      "Ronny Cox"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "30",
+    "title": "Ant-Man",
+    "type": "Movie",
+    "section": "new",
+    "description": "Seorang pencuri dibelotakkan superhero yang bisa menyusut ukuran badannya.",
+    "cast": [
+      "Paul Rudd",
+      "Michael Douglas",
+      "Evangeline Lilly",
+      "Corey Stoll"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "31",
+    "title": "Rio",
+    "type": "Movie",
+    "section": "new",
+    "description": "Burung kakatu yang dipelihara di kota menemukan persahabatan di perjalanan.",
+    "cast": [
+      "Jesse Eisenberg",
+      "Anne Hathaway",
+      "Leslie Mann",
+      "Will.i.am"
+    ],
+    "isPremium": false
+  },
+  {
+    "id": "32",
+    "title": "Shazam!",
+    "type": "Movie",
+    "section": "new",
+    "description": "Seorang anak piatu mendapat kekuatan Zeus dan jadi superhero paling galak.",
+    "cast": [
+      "Zachary Levi",
+      "Asher Angel",
+      "Jack Dylan Grazer",
+      "Djimon Hounsou"
+    ],
+    "isPremium": false
+  }
+]

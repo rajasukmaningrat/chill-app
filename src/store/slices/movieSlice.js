@@ -1,10 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+import { getMovies } from "../../services/api/movie";
+import { mapMovieFromApi } from "../../utils/movieMapper";
 
 const initialState = {
   movies: [],
   loading: false,
   error: null,
 };
+
+// Dipakai halaman Series, Film, dan Daftar Saya supaya tidak ambil data berkali-kali
+export const fetchMovies = createAsyncThunk(
+  "movie/fetchMovies",
+  async () => {
+    const data = await getMovies();
+
+    return data.map(mapMovieFromApi);
+  }
+);
 
 const movieSlice = createSlice({
   name: "movie",
@@ -36,6 +49,21 @@ const movieSlice = createSlice({
         (movie) => movie.id !== action.payload
       );
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMovies.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchMovies.fulfilled, (state, action) => {
+        state.loading = false;
+        state.movies = action.payload;
+      })
+      .addCase(fetchMovies.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
   },
 });
 

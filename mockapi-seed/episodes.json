@@ -1,0 +1,107 @@
+[
+  {
+    "movieId": "6",
+    "number": 1,
+    "title": "Wajah dan Nama",
+    "duration": "52 mnt",
+    "description": "Arusaka memenuhi janji dan mengirim sekelompok orang ke sebuah kota misterius. Semua peserta harus bertahan hidup sepuluh hari."
+  },
+  {
+    "movieId": "6",
+    "number": 2,
+    "title": "Permainan Jam",
+    "duration": "48 mnt",
+    "description": "Kartu jam, restart, dan ace menentukan siapa yang selamat."
+  },
+  {
+    "movieId": "6",
+    "number": 3,
+    "title": "Siapa yang Mengira",
+    "duration": "55 mnt",
+    "description": "Setiap peserta harus menyelesaikan permainan. Harganya adalah nyawa."
+  },
+  {
+    "movieId": "7",
+    "number": 1,
+    "title": "Mulai Jadi Pahlawan",
+    "duration": "24 mnt",
+    "description": "Izuku Midoriya mendapat kekuatan Warp Blast lalu mulai belajar di UA High School."
+  },
+  {
+    "movieId": "7",
+    "number": 2,
+    "title": "Ujian Pertama",
+    "duration": "24 mnt",
+    "description": "Kelas 1-A mengikuti ujian pertama. Tidak semua siswa berhasil lulus."
+  },
+  {
+    "movieId": "7",
+    "number": 3,
+    "title": "Serangan Musuh",
+    "duration": "24 mnt",
+    "description": "Villain masuk ke sekolah saat latihan. Deku harus memakai kekuatannya."
+  },
+  {
+    "movieId": "8",
+    "number": 1,
+    "title": "Siswa di Balik Jeruji",
+    "duration": "40 mnt",
+    "description": "Sebuah gerbang misterius berdiri di depan sekolah, dan muncul monster tanpa jejak."
+  },
+  {
+    "movieId": "8",
+    "number": 2,
+    "title": "Kelas dari Luar",
+    "duration": "42 mnt",
+    "description": "Guru dan murid keluar dari gerbang itu. Mereka harus bertahan hidup."
+  },
+  {
+    "movieId": "8",
+    "number": 3,
+    "title": "Gelombang Pertama",
+    "duration": "44 mnt",
+    "description": "Monster besar keluar dari gerbang dan membelah seluruh distrik. Chungwon memutuskan melawan."
+  },
+  {
+    "movieId": "19",
+    "number": 1,
+    "title": "Wajah Kedua",
+    "duration": "58 mnt",
+    "description": "Ibu Ji-woo rela mengorbankan nyawanya demi menyembuhkan putranya."
+  },
+  {
+    "movieId": "19",
+    "number": 2,
+    "title": "Yang Menyelamatkannya",
+    "duration": "55 mnt",
+    "description": "Murid yang asli datang kembali ke sekolah. Semua mulai curiga."
+  },
+  {
+    "movieId": "19",
+    "number": 3,
+    "title": "Sisi Gelap",
+    "duration": "61 mnt",
+    "description": "Identitas asli terungkap. Tubuh yang asli kembali ke atasnya."
+  },
+  {
+    "movieId": "21",
+    "number": 1,
+    "title": "Penyerang Striker",
+    "duration": "24 mnt",
+    "description": "Yoichi menemukan bahwa semua pemain dikurung di sebuah fasilitas."
+  },
+  {
+    "movieId": "21",
+    "number": 2,
+    "title": "Skuad Kedua",
+    "duration": "24 mnt",
+    "description": "Skuad Blue Devil mencoba mencetak gol di menit akhir."
+  },
+  {
+    "movieId": "21",
+    "number": 3,
+    "title": "ZP",
+    "duration": "24 mnt",
+    "description": "Peluang terakhir Blue Devil. Kesetiaan para pemain diuji."
+  }
+]

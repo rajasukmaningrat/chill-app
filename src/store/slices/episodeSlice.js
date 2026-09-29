@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { getEpisodes } from "../../services/api/episode";
+import { getEpisodes, getAllEpisodes } from "../../services/api/episode";
 
 const initialState = {
   episodes: [],
+  allEpisodes: [],
   movieId: null,
   loading: false,
   error: null,
@@ -12,6 +13,13 @@ const initialState = {
 export const fetchEpisodes = createAsyncThunk(
   "episode/fetchEpisodes",
   async (movieId) => getEpisodes(movieId)
+);
+
+// Dipanggil sekali untuk semua halaman, supaya jumlah episode pada hover card
+// tidak perlu request baru tiap kali kartu di-hover
+export const fetchAllEpisodes = createAsyncThunk(
+  "episode/fetchAllEpisodes",
+  async () => getAllEpisodes()
 );
 
 const episodeSlice = createSlice({
@@ -26,6 +34,12 @@ const episodeSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchAllEpisodes.fulfilled, (state, action) => {
+        state.allEpisodes = action.payload;
+      })
+      .addCase(fetchAllEpisodes.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
       .addCase(fetchEpisodes.pending, (state) => {
         state.loading = true;
         state.error = null;

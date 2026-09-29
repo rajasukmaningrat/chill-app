@@ -9,6 +9,7 @@ import store from './store/store.js'
 import "./styles/variables.css"
 import "./styles/global.css"
 import "./styles/auth.css"
+import "./styles/browse.css"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

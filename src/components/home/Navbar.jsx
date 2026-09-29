@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/icons/logo.png";
 import pp from "../../assets/icons/pp.png";
@@ -24,17 +24,11 @@ function Navbar() {
         </span>
 
         <nav className="nav-menu">
-          <Link to="/series" className="active">
-            Series
-          </Link>
+          <NavLink to="/series">Series</NavLink>
 
-          <Link to="/film">
-            Film
-          </Link>
+          <NavLink to="/film">Film</NavLink>
 
-          <Link to="/my-list">
-            Daftar Saya
-          </Link>
+          <Link to="/my-list">Daftar Saya</Link>
         </nav>
       </div>
 

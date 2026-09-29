@@ -14,3 +14,14 @@ export const getEpisodes = async (movieId) => {
 
   return response.json();
 };
+
+// GET SEMUA EPISODE SEKALIGUS untuk menghitung jumlah episode per film
+export const getAllEpisodes = async () => {
+  const response = await fetch(EPISODES_URL);
+
+  if (!response.ok) {
+    throw new Error("Gagal mengambil data episode");
+  }
+
+  return response.json();
+};

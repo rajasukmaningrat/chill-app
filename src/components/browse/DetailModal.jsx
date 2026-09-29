@@ -21,7 +21,7 @@ function DetailModal({ movie, movies = [], onClose, onPlay, onOpenDetail }) {
 
   const isSeries = movie?.type === "Series";
   const isSaved = myList.some(
-    (item) => String(item.movieId) === String(movie?.id)
+    (item) => item && String(item.movieId) === String(movie?.id)
   );
 
   // Episode hanya dibutuhkan untuk series

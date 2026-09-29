@@ -12,6 +12,9 @@ export const ORDER_STATUS = {
 
 export const getOrderDate = (order) => order?.paidAt || order?.createdAt || null;
 
+// Array dari API kadang berisi null, filter dulu sebelum dibandingkan
+const validOrders = (orders) => (orders || []).filter(Boolean);
+
 // Kalau expiryDate belum diisi di MockAPI, dihitung dari tanggal bayar
 export const getExpiryDate = (order) => {
   if (!order) return null;
@@ -28,18 +31,22 @@ export const getExpiryDate = (order) => {
 
 // Order terbaru dibuat paling akhir
 export const getLatestOrder = (orders) => {
-  if (!orders || orders.length === 0) return null;
+  const list = validOrders(orders);
 
-  return [...orders].sort(
+  if (list.length === 0) return null;
+
+  return [...list].sort(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   )[0];
 };
 
 // Order terakhir yang statusnya sudah dibayar dan belum kedaluwarsa
 export const getActiveOrder = (orders) => {
-  if (!orders || orders.length === 0) return null;
+  const list = validOrders(orders);
 
-  const paid = orders
+  if (list.length === 0) return null;
+
+  const paid = list
     .filter((order) => order.status === ORDER_STATUS.PAID)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
@@ -56,4 +63,6 @@ export const isSubscribed = (orders) => getActiveOrder(orders) !== null;
 
 // Order yang masih menunggu pembayaran
 export const getPendingOrder = (orders) =>
-  (orders || []).find((order) => order.status === ORDER_STATUS.PENDING) || null;
+  validOrders(orders).find(
+    (order) => order.status === ORDER_STATUS.PENDING
+  ) || null;

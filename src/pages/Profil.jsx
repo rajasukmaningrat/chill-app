@@ -71,8 +71,9 @@ function Profil() {
   const previewMovies = useMemo(
     () =>
       myList
+        .filter(Boolean)
         .map((item) =>
-          movies.find((movie) => String(movie.id) === String(item.movieId))
+          movies.find((movie) => movie && String(movie.id) === String(item.movieId))
         )
         .filter(Boolean)
         .slice(0, DAFTAR_PREVIEW_LIMIT),

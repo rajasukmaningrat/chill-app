@@ -26,6 +26,8 @@ function PilihPaket() {
 
   // Paket yang dipilih dikirim lewat query param supaya tetap ada saat halaman di-refresh
   const choosePackage = (item) => {
+    if (!item?.id) return;
+
     navigate(`/pembayaran?paket=${item.id}`);
   };
 
@@ -58,7 +60,7 @@ function PilihPaket() {
             <p className="browse-empty">Belum ada paket yang tersedia.</p>
           ) : (
             <div className="package-grid">
-              {packages.map((item) => (
+              {packages.filter(Boolean).map((item) => (
                 <PackageCard key={item.id} item={item} onSelect={choosePackage} />
               ))}
             </div>

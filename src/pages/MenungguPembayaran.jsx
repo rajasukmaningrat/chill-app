@@ -40,12 +40,12 @@ function MenungguPembayaran() {
   }, [dispatch, user?.id]);
 
   const order = useMemo(
-    () => orders.find((item) => String(item.id) === String(orderId)) || null,
+    () => orders.find((item) => item && String(item.id) === String(orderId)) || null,
     [orders, orderId]
   );
 
   const payment = useMemo(
-    () => payments.find((item) => String(item.orderId) === String(orderId)) || null,
+    () => payments.find((item) => item && String(item.orderId) === String(orderId)) || null,
     [payments, orderId]
   );
 

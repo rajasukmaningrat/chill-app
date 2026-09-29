@@ -35,7 +35,7 @@ function Pembayaran() {
 
   const packageId = searchParams.get("paket");
   const selectedPackage = packages.find(
-    (item) => String(item.id) === String(packageId)
+    (item) => item && String(item.id) === String(packageId)
   );
 
   useEffect(() => {

@@ -12,7 +12,7 @@ function PosterCard({ movie, episodesCount = 0, onPlay, onOpenDetail }) {
 
   // Film yang id-nya sama dengan movieId yang sedang disimpan user
   const isSaved = myList.some(
-    (item) => String(item.movieId) === String(movie.id)
+    (item) => item && String(item.movieId) === String(movie?.id)
   );
 
   const badges = getMovieBadges(movie);

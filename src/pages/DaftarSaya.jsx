@@ -50,9 +50,10 @@ function DaftarSaya() {
   const savedMovies = useMemo(
     () =>
       myList
+        .filter(Boolean)
         .map((item) =>
           movies.find(
-            (movie) => String(movie.id) === String(item.movieId)
+            (movie) => movie && String(movie.id) === String(item.movieId)
           )
         )
         .filter(Boolean),

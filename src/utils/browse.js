@@ -22,31 +22,33 @@ export const BROWSE_SECTIONS = [
 
 // Pisahkan Series dan Film memakai field type yang sudah ada
 export const getByType = (movies, type) =>
-  (movies || []).filter((movie) => movie.type === type);
+  (movies || []).filter((movie) => movie?.type === type);
 
 // Genre dropdown diambil dari seluruh nilai movie.genres, unik dan berurutan
 export const getGenres = (movies) => {
   const unique = new Set();
 
   (movies || []).forEach((movie) => {
-    (movie.genres || []).forEach((genre) => unique.add(genre));
+    (movie?.genres || []).forEach((genre) => unique.add(genre));
   });
 
   return [...unique].sort((a, b) => a.localeCompare(b));
 };
 
 export const filterByGenre = (movies, genre) => {
-  if (!genre || genre === ALL_GENRE) return movies;
+  if (!genre || genre === ALL_GENRE) return movies || [];
 
-  return movies.filter((movie) => (movie.genres || []).includes(genre));
+  return (movies || []).filter((movie) =>
+    (movie?.genres || []).includes(genre)
+  );
 };
 
 export const getSectionMovies = (movies, key) => {
   if (key === "premium") {
-    return movies.filter((movie) => movie.isPremium);
+    return (movies || []).filter((movie) => movie?.isPremium);
   }
 
-  return movies.filter((movie) => movie.section === key);
+  return (movies || []).filter((movie) => movie?.section === key);
 };
 
 // Film untuk hero: yang pertama yang punya deskripsi, biar tidak kosong
@@ -58,6 +60,8 @@ export const buildEpisodeCount = (allEpisodes) => {
   const count = {};
 
   (allEpisodes || []).forEach((episode) => {
+    if (!episode) return;
+
     const key = String(episode.movieId);
 
     count[key] = (count[key] || 0) + 1;
@@ -70,15 +74,15 @@ export const buildEpisodeCount = (allEpisodes) => {
 export const getMovieBadges = (movie) => {
   const badges = [];
 
-  if (movie.isPremium) {
+  if (movie?.isPremium) {
     badges.push({ label: "Premium", variant: "premium" });
   }
 
-  if (movie.section === SECTION.TOP) {
+  if (movie?.section === SECTION.TOP) {
     badges.push({ label: "Top 10", variant: "top" });
   }
 
-  if (movie.type === "Series" && movie.section === SECTION.TRENDING) {
+  if (movie?.type === "Series" && movie?.section === SECTION.TRENDING) {
     badges.push({ label: "Episode Baru", variant: "new" });
   }
 
@@ -90,7 +94,7 @@ export const getRecommendations = (movie, movies, limit = 8) => {
   const genres = movie?.genres || [];
 
   return (movies || [])
-    .filter((item) => String(item.id) !== String(movie?.id))
+    .filter((item) => item && String(item.id) !== String(movie?.id))
     .map((item) => ({
       item,
       score: (item.genres || []).filter((genre) => genres.includes(genre))

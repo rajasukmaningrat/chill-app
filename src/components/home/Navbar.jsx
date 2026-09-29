@@ -28,7 +28,7 @@ function Navbar() {
 
           <NavLink to="/film">Film</NavLink>
 
-          <Link to="/my-list">Daftar Saya</Link>
+          <NavLink to="/my-list">Daftar Saya</NavLink>
         </nav>
       </div>
 

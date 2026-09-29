@@ -5,6 +5,7 @@ import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/Footer";
 import BrowseHero from "../components/browse/BrowseHero";
 import Carousel from "../components/browse/Carousel";
+import DetailModal from "../components/browse/DetailModal";
 import Loading from "../components/common/Loading";
 
 import { useAuth } from "../context/AuthContext";
@@ -25,11 +26,12 @@ import {
 } from "../utils/browse";
 
 // Series dan Film memakai tampilan yang sama, hanya bedanya type movie
-function BrowsePage({ type, onPlay, onOpenDetail }) {
+function BrowsePage({ type, onPlay }) {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
   const [genre, setGenre] = useState(ALL_GENRE);
+  const [detailMovie, setDetailMovie] = useState(null);
 
   const movies = useSelector((state) => state.movie.movies);
   const loading = useSelector((state) => state.movie.loading);
@@ -80,8 +82,8 @@ function BrowsePage({ type, onPlay, onOpenDetail }) {
           genres={genres}
           genre={genre}
           onGenreChange={setGenre}
-          onPlay={() => onPlay?.(heroMovie)}
-          onMore={() => onOpenDetail?.(heroMovie)}
+          onPlay={onPlay}
+          onMore={() => setDetailMovie(heroMovie)}
         />
 
         {loading ? (
@@ -101,13 +103,21 @@ function BrowsePage({ type, onPlay, onOpenDetail }) {
               movies={getSectionMovies(filteredMovies, section.key)}
               episodeCount={episodeCount}
               onPlay={onPlay}
-              onOpenDetail={onOpenDetail}
+              onOpenDetail={setDetailMovie}
             />
           ))
         )}
       </main>
 
       <Footer />
+
+      <DetailModal
+        movie={detailMovie}
+        movies={movies}
+        onClose={() => setDetailMovie(null)}
+        onPlay={onPlay}
+        onOpenDetail={setDetailMovie}
+      />
     </>
   );
 }

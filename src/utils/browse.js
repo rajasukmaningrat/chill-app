@@ -84,3 +84,20 @@ export const getMovieBadges = (movie) => {
 
   return badges;
 };
+
+// Rekomendasi untuk film: film lain yang genre-nya paling banyak sama
+export const getRecommendations = (movie, movies, limit = 8) => {
+  const genres = movie?.genres || [];
+
+  return (movies || [])
+    .filter((item) => String(item.id) !== String(movie?.id))
+    .map((item) => ({
+      item,
+      score: (item.genres || []).filter((genre) => genres.includes(genre))
+        .length,
+    }))
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((entry) => entry.item);
+};

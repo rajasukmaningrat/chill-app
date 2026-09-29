@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Series from "./pages/Series";
 import Film from "./pages/Film";
+import DaftarSaya from "./pages/DaftarSaya";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/series" element={<Series />} />
         <Route path="/film" element={<Film />} />
+        <Route path="/my-list" element={<DaftarSaya />} />
       </Routes>
     </BrowserRouter>
   );

@@ -28,6 +28,8 @@ import {
 } from "../utils/browse";
 
 // Series dan Film memakai tampilan yang sama, hanya bedanya type movie
+// Series (Figma 6.x) dan Film (Figma 7.x) memakai tampilan yang sama,
+// hanya bedanya type movie
 function BrowsePage({ type }) {
   const dispatch = useDispatch();
   const { user } = useAuth();

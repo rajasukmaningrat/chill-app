@@ -9,17 +9,9 @@ import PackageCard from "../components/payment/PackageCard";
 import Loading from "../components/common/Loading";
 
 import { fetchPackages } from "../store/slices/packageSlice";
+import { SUBSCRIPTION_BENEFITS } from "../constants/placeholderCopy";
 
-// Teks ini belum terbaca jelas di Figma, dipakai sebagai contoh
-const BENEFITS = [
-  "Ribuan film dan series siap ditonton",
-  "Tanpa iklan yang mengganggu",
-  "Konten baru setiap minggu",
-  "Tonton di HP, tablet, laptop, dan TV",
-  "Kualitas gambar hingga 4K",
-  "Unduh untuk ditonton tanpa internet",
-];
-
+// Halaman Pilih Paket, Figma 13.1
 function PilihPaket() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -46,7 +38,7 @@ function PilihPaket() {
           <h1 className="account-title">Kenapa Harus Berlangganan?</h1>
 
           <ul className="benefit-grid">
-            {BENEFITS.map((benefit) => (
+            {SUBSCRIPTION_BENEFITS.map((benefit) => (
               <li className="benefit-item" key={benefit}>
                 <Check size={18} />
                 <span>{benefit}</span>

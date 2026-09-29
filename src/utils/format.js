@@ -1,5 +1,7 @@
 // Helper format yang dipakai di halaman pembayaran dan profil
 
+import { PAYMENT_WINDOW_HOURS, VA_LENGTH } from "../constants/placeholderCopy";
+
 export const formatRupiah = (number) =>
   new Intl.NumberFormat("id-ID", {
     style: "currency",
@@ -29,9 +31,7 @@ export const formatWaktu = (date) => {
   });
 };
 
-// Batas bayar selalu 24 jam setelah order dibuat
-export const PAYMENT_WINDOW_HOURS = 24;
-
+// Batas bayar dihitung dari order.createdAt, tidak disimpan di MockAPI
 export const getDeadline = (createdAt) => {
   if (!createdAt) return null;
 
@@ -63,11 +63,11 @@ export const getCountdown = (deadline, now = Date.now()) => {
   };
 };
 
-// Nomor virtual account buatan sendiri, 14 digit seperti VA bank Indonesia
+// Nomor virtual account buatan sendiri, formatnya belum dicek ke Figma
 export const generateVirtualAccount = () => {
   let digits = "";
 
-  for (let i = 0; i < 14; i += 1) {
+  for (let i = 0; i < VA_LENGTH; i += 1) {
     digits += Math.floor(Math.random() * 10);
   }
 

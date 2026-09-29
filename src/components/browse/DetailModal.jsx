@@ -68,6 +68,7 @@ function DetailModal({ movie, movies = [], onClose, onPlay, onOpenDetail }) {
             backgroundImage: `linear-gradient(to top, #1f1f1f 4%, rgba(0,0,0,.35) 60%, rgba(0,0,0,.55)), url(${movie.image})`,
           }}
         >
+          {/* Badge Premium di header modal, Figma 8.2 dan 9.2 */}
           {movie.isPremium && (
             <span className="poster-badge badge-premium detail-premium">
               Premium

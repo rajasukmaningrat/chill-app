@@ -1,15 +1,14 @@
 // Status langganan tidak disimpan terpisah.
 // Semua diturunkan dari order terakhir user di /orders.
 
+import { SUBSCRIPTION_DAYS } from "../constants/placeholderCopy";
+
 export const ORDER_STATUS = {
   PENDING: "pending",
   PAID: "paid",
   EXPIRED: "expired",
   CANCELLED: "cancelled",
 };
-
-// Masa langganan 30 hari sejak tanggal bayar
-const SUBSCRIPTION_DAYS = 30;
 
 export const getOrderDate = (order) => order?.paidAt || order?.createdAt || null;
 

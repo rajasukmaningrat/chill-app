@@ -16,6 +16,7 @@ import { submitPayment } from "../store/slices/paymentSlice";
 import { formatRupiah, generateVirtualAccount } from "../utils/format";
 import { PAYMENT_METHODS } from "../utils/paymentMethod";
 
+// Halaman Pembayaran, Figma 14.1
 function Pembayaran() {
   const dispatch = useDispatch();
   const navigate = useNavigate();

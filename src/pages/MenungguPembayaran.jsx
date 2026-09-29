@@ -15,15 +15,11 @@ import { fetchPayments } from "../store/slices/paymentSlice";
 import { formatRupiah, formatWaktu, getDeadline, getCountdown } from "../utils/format";
 import { getMethodLabel } from "../utils/paymentMethod";
 
-// Langkah pembayaran untuk Virtual Account
-const PAYMENT_STEPS = [
-  "Buka aplikasi m-banking atau ATM BCA",
-  "Pilih menu Transfer ke Virtual Account",
-  "Masukkan nomor virtual account di atas",
-  "Periksa jumlah tagihan lalu konfirmasi",
-  "Selesai, akun kamu otomatis aktif",
-];
+import { PAYMENT_STEPS } from "../constants/placeholderCopy";
 
+// Langkah pembayaran untuk Virtual Account (lihat constants/placeholderCopy)
+
+// Halaman Menunggu Pembayaran, Figma 15.1
 function MenungguPembayaran() {
   const { orderId } = useParams();
   const dispatch = useDispatch();

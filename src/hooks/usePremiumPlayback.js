@@ -7,7 +7,7 @@ import { isSubscribed } from "../utils/subscription";
 
 // Menahan tombol Mulai untuk konten Premium kalau user belum berlangganan.
 // Kalau sudah berlangganan atau filmnya gratis, tidak ada yang dibuka karena
-// halaman player belum dibuat (Figma 10.1-10.5 dan 11.1 di luar lingkup).
+// halaman video player (Figma 11.1) ada di luar lingkup mission ini.
 export function usePremiumPlayback() {
   const dispatch = useDispatch();
   const { user } = useAuth();

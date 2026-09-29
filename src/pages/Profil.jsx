@@ -22,6 +22,7 @@ import { getActiveOrder, isSubscribed, getExpiryDate } from "../utils/subscripti
 
 const DAFTAR_PREVIEW_LIMIT = 6;
 
+// Halaman Profil, Figma 12.1 untuk form dan 12.2 untuk kartu langganan
 function Profil() {
   const dispatch = useDispatch();
   const { user } = useAuth();

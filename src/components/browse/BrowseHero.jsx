@@ -12,7 +12,7 @@ function BrowseHero({ movie, genres, genre, onGenreChange, onPlay, onMore }) {
     <section
       className="browse-hero"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(0,0,0,.85) 15%, rgba(0,0,0,.25)), linear-gradient(to top, #141617 2%, transparent 45%), url(${movie.image})`,
+        backgroundImage: `linear-gradient(to right, rgba(0,0,0,.8) 20%, transparent), url(${movie.image})`,
       }}
     >
       <div className="browse-hero-top">

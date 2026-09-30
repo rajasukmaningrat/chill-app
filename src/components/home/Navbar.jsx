@@ -1,9 +1,10 @@
+import { useRef } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/icons/logo.png";
 import pp from "../../assets/icons/pp.png";
 
-import { User, Star, LogOut, ChevronDown } from "lucide-react";
+import { User, Star, LogOut, ChevronDown, Menu } from "lucide-react";
 
 import { useAuth } from "../../context/AuthContext";
 
@@ -11,9 +12,18 @@ function Navbar() {
   const navigate = useNavigate();
   const { logout } = useAuth();
 
+  const navToggle = useRef(null);
+
   const handleLogout = () => {
     logout();
     navigate("/", { replace: true });
+  };
+
+  // Menu mobile menutup sendiri begitu salah satu link diklik
+  const closeMobileNav = () => {
+    if (navToggle.current) {
+      navToggle.current.checked = false;
+    }
   };
 
   return (
@@ -23,7 +33,24 @@ function Navbar() {
           <img src={logo} alt="Logo chill" />
         </span>
 
-        <nav className="nav-menu">
+        <input
+          type="checkbox"
+          id="toggle-nav"
+          className="hidden-checkbox"
+          ref={navToggle}
+        />
+
+        <label
+          htmlFor="toggle-nav"
+          className="nav-burger"
+          aria-label="Buka menu"
+        >
+          <Menu className="nav-burger-icon" size={22} />
+        </label>
+
+        <nav className="nav-menu" onClick={closeMobileNav}>
+          <NavLink to="/home">Home</NavLink>
+
           <NavLink to="/series">Series</NavLink>
 
           <NavLink to="/film">Film</NavLink>

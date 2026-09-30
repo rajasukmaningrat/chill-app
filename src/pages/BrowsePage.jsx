@@ -81,16 +81,16 @@ function BrowsePage({ type }) {
     <>
       <Navbar />
 
-      <main className="browse-page">
-        <BrowseHero
-          movie={heroMovie}
-          genres={genres}
-          genre={genre}
-          onGenreChange={setGenre}
-          onPlay={handlePlay}
-          onMore={() => setDetailMovie(heroMovie)}
-        />
+      <BrowseHero
+        movie={heroMovie}
+        genres={genres}
+        genre={genre}
+        onGenreChange={setGenre}
+        onPlay={handlePlay}
+        onMore={() => setDetailMovie(heroMovie)}
+      />
 
+      <main className="browse-page">
         {loading ? (
           <Loading label="Memuat film..." />
         ) : error ? (
